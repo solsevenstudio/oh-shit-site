@@ -4,17 +4,22 @@ export default function SubscribeForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   setStatus("loading");
 
   try {
-    // call your Vercel function with ?email=...
-    const resp = await fetch("/api/subscribe?email=" + encodeURIComponent(email));
-    if (!resp.ok) throw new Error("API error");
+    const response = await fetch(
+      `/api/subscribe?email=${encodeURIComponent(email)}`,
+      { method: "GET" }
+    );
 
-    setStatus("success");
-    setEmail("");
+    if (response.ok) {
+      setStatus("success");
+      setEmail("");
+    } else {
+      setStatus("error");
+    }
   } catch (err) {
     console.error(err);
     setStatus("error");
