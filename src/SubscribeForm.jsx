@@ -1,10 +1,6 @@
+// src/SubscribeForm.jsx
 import React from "react";
 
-/**
- * Mailchimp subscribe form
- * Action URL comes from your embed:
- * https://solsevenstudio.us20.list-manage.com/subscribe/post?u=defbb93410f7ef85725de88b1&id=0520fdc9c0&f_id=00807deef0
- */
 export default function SubscribeForm() {
   return (
     <form
@@ -16,14 +12,14 @@ export default function SubscribeForm() {
     >
       <input
         type="email"
-        name="EMAIL"
+        name="EMAIL"   // Mailchimp expects EMAIL (caps)
         id="mce-EMAIL"
         required
         placeholder="you@email.com"
         className="w-full sm:w-auto flex-grow rounded-xl px-3 py-2 bg-white/10 border border-white/20 text-white"
       />
 
-      {/* Bot trap (Mailchimp’s honeypot) */}
+      {/* Mailchimp honeypot (keep the exact name) */}
       <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
         <input
           type="text"
