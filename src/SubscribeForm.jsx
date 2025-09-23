@@ -3,6 +3,7 @@ export default function SubscribeForm() {
     <form
       action="https://solsevenstudio.us20.list-manage.com/subscribe/post?u=defbb93410f7ef85725de88b1&id=0520fdc9c0&f_id=00807deef0"
       method="post"
+      target="_blank"
       noValidate
       className="flex flex-col sm:flex-row gap-3 justify-center"
     >
