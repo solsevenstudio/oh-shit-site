@@ -1,23 +1,33 @@
 export default async function handler(req, res) {
-  // accept BOTH GET and POST, but prefer query string (simplest)
-  const email =
-    (req.query && req.query.email) ||
-    (req.body && req.body.email) ||
-    "";
-
-  if (!email) {
-    return res.status(400).json({ error: "Email is required" });
-  }
-
   try {
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbwqlpzgaLV9776R2ZztOcaW19Z6ev69f6k78gVZ2bLp8JW7vfL86le_gUyLEq63_KKP/exec";
-    // forward as GET with ?email=... (matches what we know works)
-    const url = scriptUrl + "?email=" + encodeURIComponent(email);
-    await fetch(url);
+    // Read email from query string OR JSON body
+    const base = `https://${req.headers.host}`;
+    const fullUrl = new URL(req.url, base);
+    const email =
+      (fullUrl.searchParams.get("email") ||
+        (req.body && req.body.email) ||
+        "")
+        .toString()
+        .trim();
 
-    return res.status(200).json({ success: true });
+    // Simple email check
+    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!ok) {
+      res.status(400).send("missing or invalid email");
+      return;
+    }
+
+    // Your Google Apps Script URL
+    const scriptUrl =
+      "https://script.google.com/macros/s/AKfycbwqlpzgaLV9776R2ZztOcaW19Z6ev69f6k78gVZ2bLp8JW7vfL86le_gUyLEq63_KKP/exec";
+
+    // Forward as GET (the method we know works)
+    const forwardUrl = `${scriptUrl}?email=${encodeURIComponent(email)}`;
+    await fetch(forwardUrl);
+
+    res.status(200).json({ ok: true });
   } catch (err) {
-    console.error("Error:", err);
-    return res.status(500).json({ error: "Server error" });
+    console.error(err);
+    res.status(500).send("server error");
   }
 }
