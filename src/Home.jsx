@@ -2,7 +2,7 @@ import React from "react";
 
 /** Public assets (in /public/assets) */
 const coverImg = "/assets/Cover.jpg";
-const katImg = "/assets/Kat Picture.png";             
+const katImg = "/assets/kat.png";
 const kevImg = "/assets/kevin.jpg";
 const bowelCancerLogo = "/assets/bowel-cancer-uk-logo.png";
 const grcLogo = "/assets/grc-logo.png"; // 
