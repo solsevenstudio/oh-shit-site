@@ -9,5 +9,9 @@
     <loc>https://ohshtivegotbowelcancer.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <url>
+    <loc>https://ohshtivegotbowelcancer.com/press</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

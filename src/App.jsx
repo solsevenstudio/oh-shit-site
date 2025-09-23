@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { FaLinkedin, FaEnvelope, FaShoppingCart } from "react-icons/fa";
 import Home from "./Home.jsx";
+import Press from "./Press.jsx";
 import About from "./About.jsx";
 
 const BUY_LINK =
@@ -20,40 +21,44 @@ export default function App() {
             </Link>
 
             {/* Nav */}
-            <nav className="flex items-center gap-6">
-              <Link to="/about" className="hover:text-amber-300 flex items-center gap-1">
-                About the Author
-              </Link>
+           <nav className="flex items-center gap-6">
+  <Link to="/about" className="hover:text-amber-300 flex items-center gap-1">
+    About the Author
+  </Link>
 
-              <a
-                href="mailto:david@solsevenstudio.com?subject=Media%20Enquiry"
-                className="hover:text-amber-300 flex items-center gap-1"
-              >
-                <FaEnvelope size={18} />
-                <span>Media Enquiries</span>
-              </a>
+  <Link to="/press" className="hover:text-amber-300 flex items-center gap-1">
+    Press
+  </Link>
 
-              <a
-                href="https://www.linkedin.com/in/davidbarrowsolsevenstudio/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-amber-300 flex items-center gap-1"
-              >
-                <FaLinkedin size={18} />
-                <span>LinkedIn</span>
-              </a>
+  <a
+    href="mailto:david@solsevenstudio.com?subject=Media%20Enquiry"
+    className="hover:text-amber-300 flex items-center gap-1"
+  >
+    {/* FaEnvelope already imported in your file */}
+    <FaEnvelope size={18} />
+    <span>Media Enquiries</span>
+  </a>
 
-              {/* Divider space before Buy button */}
-              <div className="pl-4">
-                <a
-                  href={BUY_LINK}
-                  className="rounded-xl px-4 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300 flex items-center gap-2"
-                >
-                  <FaShoppingCart size={18} />
-                  <span>Buy the book</span>
-                </a>
-              </div>
-            </nav>
+  <a
+    href="https://www.linkedin.com/in/davidbarrowsolsevenstudio/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-amber-300 flex items-center gap-1"
+  >
+    <FaLinkedin size={18} />
+    <span>LinkedIn</span>
+  </a>
+
+  <div className="pl-4">
+    <a
+      href={BUY_LINK}
+      className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300 shadow-sm hover:shadow transition"
+    >
+      <FaShoppingCart size={18} />
+      <span>Buy the book</span>
+    </a>
+  </div>
+</nav>
           </div>
         </header>
 
@@ -61,6 +66,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+<Route path="/press" element={<Press />} />
         </Routes>
 
         {/* Footer */}
