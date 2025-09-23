@@ -80,29 +80,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photos */}
-      <section className="bg-[#0e2a2f] py-14 px-4">
-        <div className="max-w-4xl mx-auto grid gap-8 sm:grid-cols-2">
+      {/* Forewords */}
+<section id="forewords" className="bg-[#0e2a2f] py-14 px-4">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="font-serif text-2xl sm:text-3xl mb-8 text-center">Forewords</h2>
+
+    <div className="grid gap-8 md:grid-cols-2">
+      {/* Katrina */}
+      <article className="bg-white/10 rounded-2xl p-6 shadow">
+        <div className="flex items-center gap-4 mb-4">
           <img
             src={katImg}
-            alt="Katrina"
-            className="rounded-2xl shadow-lg"
+            alt="Katrina Macdermid"
+            className="w-20 h-20 rounded-full object-cover"
           />
+          <div>
+            <p className="font-semibold">Katrina Macdermid</p>
+            <p className="text-sm text-neutral-300">Foreword</p>
+          </div>
+        </div>
+        <blockquote className="italic text-neutral-200">
+          “This isn’t just a record of symptoms and treatments. It’s about humanity…
+          If it feels like this for you, you’re not failing — you’re human.”
+        </blockquote>
+      </article>
+
+      {/* Kevin */}
+      <article className="bg-white/10 rounded-2xl p-6 shadow">
+        <div className="flex items-center gap-4 mb-4">
           <img
             src={kevImg}
-            alt="Kevin"
-            className="rounded-2xl shadow-lg"
+            alt="Kevin Donaghy"
+            className="w-20 h-20 rounded-full object-cover"
           />
+          <div>
+            <p className="font-semibold">Kevin Donaghy</p>
+            <p className="text-sm text-neutral-300">Foreword</p>
+          </div>
         </div>
-      </section>
+        <blockquote className="italic text-neutral-200">
+          “This book isn’t polished PR. It’s about honesty — the messy business
+          of carrying on, and the small wins that make survival possible.”
+        </blockquote>
+      </article>
+    </div>
+  </div>
+</section>
 
-      {/* Logos */}
-      <section className="bg-white/5 py-10 px-4">
-        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-8">
-          <img src={bowelCancerLogo} alt="Bowel Cancer UK" className="h-12" />
-          <img src={grcLogo} alt="IT Governance" className="h-12" />
-        </div>
-      </section>
+     {/* Supported by */}
+<section id="support" className="bg-white py-14 px-4">
+  <div className="max-w-5xl mx-auto text-center text-[#0e2a2f]">
+    <h2 className="font-serif text-2xl sm:text-3xl mb-8">Supported by</h2>
+    <div className="flex flex-wrap items-center justify-center gap-10">
+      <img src={bowelCancerLogo} alt="Bowel Cancer UK" className="h-16 md:h-20 object-contain" />
+      <img src={grcLogo} alt="IT Governance" className="h-16 md:h-20 object-contain" />
+    </div>
+    <p className="mt-6 text-sm text-[#0e2a2f]/70">
+      A percentage of profits are being donated to Bowel Cancer UK.
+    </p>
+  </div>
+</section>
 
       {/* Stay in the loop - Mailchimp */}
       <section id="newsletter" className="bg-white/5 py-14 px-4">
