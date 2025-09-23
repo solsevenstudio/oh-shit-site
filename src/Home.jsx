@@ -2,8 +2,8 @@ import React from "react";
 
 /** Public assets (in /public/assets) */
 const coverImg = "/assets/Cover.jpg";
-const katImg = "/assets/Kat Picture.jpeg";      // ensure extension matches the file in /public/assets
-const kevImg = "/assets/Kevin Picture.jpeg";
+const katImg = "/assets/Kat Picture.png";      // ensure extension matches the file in /public/assets
+const kevImg = "/assets/kevin.jpg";
 const bowelCancerLogo = "/assets/Bowel Cancer UK logo.png";
 const grcLogo = "/assets/itg-logo-lg.png";
 
