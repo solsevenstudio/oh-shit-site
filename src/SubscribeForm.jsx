@@ -34,7 +34,12 @@ const handleSubmit = async (e) => {
           Want updates on events, speaking, and Part Two? Drop your email below and I’ll ping you when there’s news.
         </p>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 justify-center">
+       <form
+  action="/api/subscribe"
+  method="GET"
+  onSubmit={handleSubmit}
+  className="flex flex-col sm:flex-row gap-3 justify-center"
+>
           <input
             name="email"
             type="email"
