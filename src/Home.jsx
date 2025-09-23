@@ -1,3 +1,5 @@
+import SubscribeForm from "./SubscribeForm.jsx";
+
 import React, { useState } from "react";
 
 /** Public assets (in /public/assets) */
