@@ -2,10 +2,10 @@ import React from "react";
 
 /** Public assets (in /public/assets) */
 const coverImg = "/assets/Cover.jpg";
-const katImg = "/assets/kat.jpeg";              // adjust names if different
-const kevImg = "/assets/kevin.jpeg";
-const bowelCancerLogo = "/assets/Bowel Cancer UK logo.png";
-const grcLogo = "/assets/itg-logo-lg.png";
+const katImg = "/assets/Kat Picture.png";             
+const kevImg = "/assets/kevin.jpg";
+const bowelCancerLogo = "/assets/bowel-cancer-uk-logo.png";
+const grcLogo = "/assets/grc-logo.png"; // 
 
 /** Mail + fundraising links */
 const BUY_LINK =
