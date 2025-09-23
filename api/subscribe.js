@@ -1,19 +1,19 @@
 export default async function handler(req, res) {
   try {
     // Read email from query string OR JSON body
-    const base = `https://${req.headers.host}`;
-    const fullUrl = new URL(req.url, base);
+    const full = new URL(req.url, `https://${req.headers.host}`);
     const email =
-      (fullUrl.searchParams.get("email") ||
+      (full.searchParams.get("email") ||
         (req.body && req.body.email) ||
         "")
         .toString()
         .trim();
 
-    // Simple email check
+    // Basic email check
     const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!ok) {
-      res.status(400).send("missing or invalid email");
+      res.statusCode = 400;
+      res.end("missing or invalid email");
       return;
     }
 
@@ -25,9 +25,12 @@ export default async function handler(req, res) {
     const forwardUrl = `${scriptUrl}?email=${encodeURIComponent(email)}`;
     await fetch(forwardUrl);
 
-    res.status(200).json({ ok: true });
+    // ✅ Redirect back to home with a small success marker
+    res.writeHead(302, { Location: "/?subscribed=1" });
+    res.end();
   } catch (err) {
     console.error(err);
-    res.status(500).send("server error");
+    res.statusCode = 500;
+    res.end("server error");
   }
 }

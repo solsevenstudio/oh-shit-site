@@ -1,30 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function SubscribeForm() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("");
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setStatus("loading");
-
-  try {
-    const response = await fetch(
-      `/api/subscribe?email=${encodeURIComponent(email)}`,
-      { method: "GET" }
-    );
-
-    if (response.ok) {
-      setStatus("success");
-      setEmail("");
-    } else {
-      setStatus("error");
-    }
-  } catch (err) {
-    console.error(err);
-    setStatus("error");
-  }
-};
+  // If redirected back with ?subscribed=1, show a success line
+  const isSubscribed =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("subscribed") === "1";
 
   return (
     <section id="newsletter" className="bg-white/5 py-14 px-4">
@@ -34,35 +14,31 @@ const handleSubmit = async (e) => {
           Want updates on events, speaking, and Part Two? Drop your email below and I’ll ping you when there’s news.
         </p>
 
-       <form
-  action="/api/subscribe"
-  method="GET"
-  onSubmit={handleSubmit}
-  className="flex flex-col sm:flex-row gap-3 justify-center"
->
+        {/* Plain HTML form -> your Vercel API. No JS, no CORS. */}
+        <form
+          action="/api/subscribe"
+          method="GET"
+          className="flex flex-col sm:flex-row gap-3 justify-center"
+        >
           <input
-            name="email"
+            name="email"                // IMPORTANT
             type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
             required
             placeholder="you@email.com"
             className="w-full sm:w-auto flex-grow rounded-xl px-3 py-2 bg-white/10 border border-white/20 text-white"
           />
           <button
             type="submit"
-            disabled={status === "loading"}
-            className="rounded-xl px-6 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300 disabled:opacity-50"
+            className="rounded-xl px-6 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
           >
-            {status === "loading" ? "Sending..." : "Subscribe"}
+            Subscribe
           </button>
         </form>
 
-        {status === "success" && (
-          <p className="text-green-400 text-sm mt-3">🎉 Thanks! You’re on the list.</p>
-        )}
-        {status === "error" && (
-          <p className="text-red-400 text-sm mt-3">❌ Oops, something went wrong. Try again?</p>
+        {isSubscribed && (
+          <p className="text-green-400 text-sm mt-3">
+            🎉 Thanks! You’re on the list.
+          </p>
         )}
 
         <p className="text-neutral-400 text-xs mt-6">
