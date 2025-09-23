@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 /** Public assets (in /public/assets) */
 const coverImg = "/assets/Cover.jpg";
@@ -74,7 +74,55 @@ const extracts = [
       "Mentally I am scarred — but I’m not alone. This book doesn’t end with ‘The End’; it ends with ‘What next?’",
   },
 ];
+// Inline subscribe form — posts to Google Apps Script → Sheet
+function SubscribeForm() {
+  const [email, setEmail] = React.useState("");
+  const [status, setStatus] = React.useState("idle"); // idle | loading | ok | error
 
+  // ⬇️ paste your Apps Script Web App URL between the quotes
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbydpi10NtoqVwsBYRUB7uVaxtjpGPxQLxrTFRkvlaMIGEeAGpqbQKf5frcWAQV4G6W5/exec";
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      // Apps Script needs no-cors; response is opaque — we assume success if no network error
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      setEmail("");
+      setStatus("ok");
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  return (
+    <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-3 justify-center">
+      <input
+        type="email"
+        required
+        placeholder="you@email.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="w-full sm:w-72 rounded-lg px-3 py-2 bg-white/10 border border-white/20 text-white placeholder-white/60"
+      />
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="rounded-lg px-5 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
+      >
+        {status === "loading" ? "Subscribing…" : "Subscribe"}
+      </button>
+
+      {status === "ok" && <span className="text-green-300 text-sm sm:self-center">Thanks — you’re on the list.</span>}
+      {status === "error" && <span className="text-red-300 text-sm sm:self-center">Hmm, try again?</span>}
+    </form>
+  );
+}
 export default function Home() {
   return (
     <main>
@@ -310,26 +358,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stay in the loop */}
-      <section id="newsletter" className="bg-white/5 py-14 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-2xl sm:text-3xl mb-4">
-            Stay in the loop
-          </h2>
-          <p className="text-neutral-300 mb-6 px-1">
-            Want updates on events, speaking, and Part Two? Drop me a line.
-          </p>
-          <a
-            href="mailto:david@solsevenstudio.com?subject=OH%20SH!T%20Book%20Updates&body=Hi%20David%2C%20please%20keep%20me%20posted%20on%20the%20book%20and%20events.%20Thanks!"
-            className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
-          >
-            Email me at david@solsevenstudio.com
-          </a>
-          <p className="text-neutral-400 text-sm mt-4">
-            I’ll reply personally and add you to my update list.
-          </p>
-        </div>
-      </section>
+<section id="newsletter" className="bg-white/5 py-14 px-4">
+  <div className="max-w-md mx-auto text-center">
+    <h2 className="font-serif text-2xl sm:text-3xl mb-4">
+      Stay in the loop
+    </h2>
+
+    <p className="text-neutral-300 mb-6 px-1">
+      Want updates on events, speaking, and Part Two? Drop your email below and I’ll ping you when there’s news.
+    </p>
+
+    <div className="mt-4">
+      <SubscribeForm />
+    </div>
+
+    <p className="text-neutral-400 text-xs mt-4">
+      I’ll email occasionally. Unsubscribe anytime.
+    </p>
+  </div>
+</section>
     </main>
   );
 }
