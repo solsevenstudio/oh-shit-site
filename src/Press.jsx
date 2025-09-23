@@ -1,5 +1,6 @@
 import React from "react";
 import { FaDownload, FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaFileArchive } from "react-icons/fa";
 
 const coverHiRes = "/assets/Cover.jpg";          // use your highest-res cover here
 const authorHeadshot = "/assets/david.jpg";      // optional (drop a headshot into public/assets/david.jpg)
@@ -93,6 +94,21 @@ export default function Press() {
             Please attribute quotes to the speakers above and reference the book title on first use.
           </p>
         </section>
+
+{/* One-click press kit */}
+<section className="mb-14">
+  <h2 className="font-serif text-2xl mb-4">Press Kit (ZIP)</h2>
+  <p className="text-neutral-300 mb-4">
+    Download everything in one go: cover (hi-res), author headshot, and a 1-page press note.
+  </p>
+  <a
+    href="/assets/press-kit.zip"
+    className="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
+  >
+    <FaFileArchive size={18} />
+    Download Press Kit (ZIP)
+  </a>
+</section>
 
         {/* Contact */}
         <section className="text-center">

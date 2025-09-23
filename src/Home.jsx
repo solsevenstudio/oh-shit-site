@@ -1,14 +1,17 @@
 import React from "react";
 
+/** Public assets (in /public/assets) */
 const coverImg = "/assets/Cover.jpg";
-const katImg = "/assets/Kat Picture.png";
-const kevImg = "/assets/Kevin Picture.jpg";
+const katImg = "/assets/Kat Picture.jpeg";      // ensure extension matches the file in /public/assets
+const kevImg = "/assets/Kevin Picture.jpeg";
 const bowelCancerLogo = "/assets/Bowel Cancer UK logo.png";
 const grcLogo = "/assets/itg-logo-lg.png";
 
+/** Mail link */
 const BUY_LINK =
   "mailto:david@solsevenstudio.com?subject=OH%20SH!T%20Book%20Order";
 
+/** Extracts */
 const extracts = [
   {
     title: "Diagnosis",
@@ -46,22 +49,30 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section id="top" className="relative py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <img
-            src={coverImg}
-            alt="Book cover"
-            className="mx-auto max-w-sm mb-8 rounded-2xl shadow-lg"
-          />
-          <p className="uppercase tracking-wide text-amber-400 font-semibold mb-2">
+      <section id="top" className="relative py-16 px-4 sm:py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mx-auto w-full max-w-full sm:max-w-sm">
+            <img
+              src={coverImg}
+              alt="Book cover"
+              className="mx-auto w-full rounded-2xl shadow-xl ring-1 ring-white/10"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <span className="inline-block mt-8 mb-3 text-[11px] sm:text-xs tracking-widest uppercase bg-amber-400/15 text-amber-300 px-3 py-1 rounded-full border border-amber-300/30">
             Part One: Diagnosis &amp; Treatment Diaries
-          </p>
-          <h1 className="font-serif text-4xl mb-4">
+          </span>
+
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-4">
             OH SH!T, I’ve Got Bowel Cancer
           </h1>
-          <p className="text-lg text-neutral-300 mb-6">
+
+          <p className="text-base sm:text-lg text-neutral-300 mb-6 px-1">
             A raw diary of diagnosis, fear, humour, Liverpool FC, and recovery.
           </p>
+
           <a
             href={BUY_LINK}
             className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
@@ -72,53 +83,72 @@ export default function Home() {
       </section>
 
       {/* Extracts */}
-      <section id="extracts" className="bg-white/5 py-16 px-4">
+      <section id="extracts" className="bg-white/5 py-14 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-3xl mb-10 text-center">
+          <h2 className="font-serif text-2xl sm:text-3xl mb-8 text-center">
             Extracts from the Diaries
           </h2>
-          <div className="grid gap-6 md:grid-cols-2">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {extracts.map((ex, i) => (
-              <article key={i} className="bg-white/10 rounded-xl p-6">
-                <h3 className="font-semibold text-amber-300 mb-2">{ex.title}</h3>
-                <p className="italic text-neutral-200 leading-relaxed">“{ex.quote}”</p>
+              <article key={i} className="bg-white/10 rounded-2xl p-6">
+                <h3 className="font-semibold text-amber-300 mb-2">
+                  {ex.title}
+                </h3>
+                <p className="italic text-neutral-200 leading-relaxed">
+                  “{ex.quote}”
+                </p>
               </article>
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <a
+              href={BUY_LINK}
+              className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
+            >
+              Read the full diaries
+            </a>
           </div>
         </div>
       </section>
 
       {/* Forewords */}
-      <section id="forewords" className="bg-white/5 py-16 px-4">
+      <section id="forewords" className="bg-white/5 py-14 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-3xl mb-10">Forewords</h2>
+          <h2 className="font-serif text-2xl sm:text-3xl mb-8 text-center md:text-left">
+            Forewords
+          </h2>
+
           <div className="grid md:grid-cols-2 gap-8">
-            <article className="bg-white/10 rounded-xl p-6 text-center">
+            <article className="bg-white/10 rounded-2xl p-6 text-center">
               <img
                 src={katImg}
                 alt="Katrina Macdermid"
-                className="w-28 h-28 rounded-full mx-auto mb-4 object-cover"
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 object-cover"
                 loading="lazy"
                 decoding="async"
               />
               <blockquote className="text-neutral-200 leading-relaxed">
                 “This isn’t just a record of symptoms and treatments. It’s about
-                humanity… If it feels like this for you, you’re not failing — you’re human.”
+                humanity… If it feels like this for you, you’re not failing —
+                you’re human.”
               </blockquote>
               <p className="mt-2 font-semibold">— Katrina Macdermid</p>
             </article>
 
-            <article className="bg-white/10 rounded-xl p-6 text-center">
+            <article className="bg-white/10 rounded-2xl p-6 text-center">
               <img
                 src={kevImg}
                 alt="Kevin Donaghy"
-                className="w-28 h-28 rounded-full mx-auto mb-4 object-cover"
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto mb-4 object-cover"
                 loading="lazy"
                 decoding="async"
               />
               <blockquote className="text-neutral-200 leading-relaxed">
                 “This book isn’t polished PR. It’s about honesty. The messy
-                business of carrying on… and the small wins that make survival possible.”
+                business of carrying on… and the small wins that make survival
+                possible.”
               </blockquote>
               <p className="mt-2 font-semibold">— Kevin Donaghy</p>
             </article>
@@ -127,26 +157,33 @@ export default function Home() {
       </section>
 
       {/* Supported by */}
-      <section id="support" className="py-16 px-4 bg-white border-y border-black/5">
+      <section
+        id="support"
+        className="py-14 px-4 bg-white border-y border-black/5"
+      >
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="font-serif text-3xl mb-6 text-[#0e2a2f]">Supported by</h2>
-          <div className="flex flex-wrap justify-center items-center gap-12 mb-6">
+          <h2 className="font-serif text-2xl sm:text-3xl mb-6 text-[#0e2a2f]">
+            Supported by
+          </h2>
+
+          <div className="flex flex-wrap justify-center items-center gap-10 sm:gap-12 mb-6">
             <img
               src={bowelCancerLogo}
               alt="Bowel Cancer UK"
-              className="h-20 md:h-24 object-contain"
+              className="h-16 sm:h-20 md:h-24 object-contain"
               loading="lazy"
               decoding="async"
             />
             <img
               src={grcLogo}
               alt="GRC Solutions"
-              className="h-20 md:h-24 object-contain"
+              className="h-16 sm:h-20 md:h-24 object-contain"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <p className="text-[#0e2a2f] text-xl md:text-2xl font-semibold mt-4">
+
+          <p className="text-[#0e2a2f] text-lg sm:text-xl md:text-2xl font-semibold mt-2">
             A percentage of all profits will be donated to{" "}
             <strong className="underline">Bowel Cancer UK</strong>.
           </p>
@@ -154,10 +191,12 @@ export default function Home() {
       </section>
 
       {/* Stay in the loop */}
-      <section id="newsletter" className="bg-white/5 py-16 px-4">
+      <section id="newsletter" className="bg-white/5 py-14 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-3xl mb-4">Stay in the loop</h2>
-          <p className="text-neutral-300 mb-8">
+          <h2 className="font-serif text-2xl sm:text-3xl mb-4">
+            Stay in the loop
+          </h2>
+          <p className="text-neutral-300 mb-6 px-1">
             Want updates on events, speaking, and Part Two? Drop me a line.
           </p>
           <a
