@@ -39,27 +39,25 @@ export default function SubscribeForm() {
           and I’ll ping you when there’s news.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3 justify-center"
-        >
-          <input
-            name="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            placeholder="you@email.com"
-            className="w-full sm:w-auto flex-grow rounded-xl px-3 py-2 bg-white/10 border border-white/20 text-white"
-          />
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="rounded-xl px-6 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300 disabled:opacity-50"
-          >
-            {status === "loading" ? "Sending..." : "Subscribe"}
-          </button>
-        </form>
+     <form
+  action="https://script.google.com/macros/s/AKfycbwqlpzgaLV9776R2ZztOcaW19Z6ev69f6k78gVZ2bLp8JW7vfL86le_gUyLEq63_KKP/exec"
+  method="GET"
+  className="flex flex-col sm:flex-row gap-3 justify-center"
+>
+  <input
+    name="email"
+    type="email"
+    required
+    placeholder="you@email.com"
+    className="w-full sm:w-auto flex-grow rounded-xl px-3 py-2 bg-white/10 border border-white/20 text-white"
+  />
+  <button
+    type="submit"
+    className="rounded-xl px-6 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
+  >
+    Subscribe
+  </button>
+</form>
 
         {status === "success" && (
           <p className="text-green-400 text-sm mt-3">
