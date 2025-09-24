@@ -283,7 +283,7 @@ export default function Home() {
       <img
         src={bowelCancerLogo}
         alt="Bowel Cancer UK"
-        className="h-16 md:h-20 object-contain"
+        className="h-30 md:h-34 object-contain"
       />
       <img
         src={grcLogo}
