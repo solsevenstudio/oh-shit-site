@@ -7,7 +7,7 @@ const kevImg = "/assets/kevin.jpg";
 const bowelCancerLogo = "/assets/bowel-cancer-uk-logo.png";
 const grcLogo = "/assets/grc-logo.png";
 
-/** Links */
+/** Links (update BUY_LINK later to your product page if needed) */
 const BUY_LINK =
   "https://itgovernancepublishing.co.uk/product/oh-shit-ive-got-bowel-cancer";
 const JUSTGIVING_LINK =
@@ -19,28 +19,28 @@ const EXTRACTS = [
     title: "Diagnosis",
     quote:
       "As I write these diaries, I have no idea what the ending will be… In Menorca, after my first steak in years, a pain in my left side arrived — and never really left.",
-    href: "/about",
+    href: "/about", // TODO: replace with actual link later
   },
   {
-    title: "Running — ‘FUCK you, tumour’",
+    title: "Running — ‘fuck you, tumour’",
     quote:
       "Boxing Day: 6km. Every step is me telling cancer to do one. Movement became my rebellion and prep for surgery.",
     href: "/about",
   },
   {
-    title: "Surgery Day",
+    title: "Surgery day",
     quote:
       "Check-in 07:00. By 11:30 I’m in a gown. Bright lights, screens ready to show my insides… and a knot in my stomach.",
     href: "/about",
   },
   {
-    title: "Earth Shuddering Farts",
+    title: "The ward (and the fart)",
     quote:
       "5,000 steps up and down the ward. Beeps, morphine, and yes — the kind of fart only bowel surgery patients celebrate.",
     href: "/about",
   },
   {
-    title: "Football is medicine",
+    title: "Football medicine",
     quote:
       "Dorking on one iPad, Liverpool on the other. For 90 minutes I didn’t think about cancer or the bag on my stomach.",
     href: "/about",
@@ -53,23 +53,31 @@ const EXTRACTS = [
   },
 ];
 
+/** Smooth scroll helper for in-page anchors */
+const go = (id) => (e) => {
+  e.preventDefault();
+  document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 export default function Home() {
   return (
     <main className="bg-[#0e2a2f] text-white">
       {/* Hero: cover + About the Book */}
-      <section className="px-6 py-16 md:py-24 max-w-6xl mx-auto">
+      <section className="px-6 py-14 sm:py-16 md:py-24 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          {/* Book cover matches column height */}
-<div className="relative md:h-full flex justify-center items-start">
-  <img
-    src={coverImg}
-    alt="OH SH!T, I’ve Got Bowel Cancer book cover"
-    className="w-full md:w-auto md:max-h-[640px] object-contain rounded-xl shadow-lg"
-  />
-</div>
+          {/* Book cover — neat sizing, no cropping */}
+          <div className="relative md:h-full flex justify-center items-start">
+            <img
+              src={coverImg}
+              alt="OH SH!T, I’ve Got Bowel Cancer book cover"
+              width="900"
+              height="1200"
+              className="w-full md:w-auto md:max-h-[640px] object-contain rounded-xl shadow-lg"
+            />
+          </div>
 
           {/* About the Book */}
-          <div className="max-w-xl text-left space-y-4">
+          <div className="max-w-xl text-left space-y-4 sm:space-y-5">
             <h2 className="font-serif text-2xl sm:text-3xl mb-2">About the Book</h2>
 
             <p>
@@ -105,18 +113,21 @@ export default function Home() {
               you’re facing cancer yourself or standing beside someone who is.
             </p>
 
-            <p className="mt-4 bg-amber-100/10 border border-amber-400/30 text-amber-200 px-4 py-3 rounded-lg font-medium">
-  A portion of the proceeds from every purchase will be donated to{" "}
-  <span className="font-bold">Bowel Cancer UK</span>{" "}
-  <span className="italic">(reg. Charity no: 1071038)</span>.
-</p>
+            {/* Charity highlight */}
+            <p className="mt-4 bg-amber-100/10 border border-amber-400/30 text-amber-100 px-4 py-3 rounded-lg font-medium leading-relaxed">
+              A portion of the proceeds from every purchase will be donated to{" "}
+              <span className="font-bold">Bowel Cancer UK</span>{" "}
+              <span className="italic">(reg. Charity no: 1071038)</span>.
+            </p>
 
-            {/* Optional: keep Buy link near the intro if you want it accessible here */}
-            {/* <a
+            {/* Optional Buy — keep commented until you want it here
+            <a
               href={BUY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4 rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
+              className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
+                         hover:bg-amber-300/15 transition-colors
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
             >
               Buy the Book
             </a> */}
@@ -138,6 +149,7 @@ export default function Home() {
                 className="bg-white/10 rounded-2xl p-6 shadow hover:shadow-lg transition-shadow"
               >
                 <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                <div className="h-px w-10 bg-white/15 mb-4"></div>
                 <p className="italic text-neutral-200 mb-5">“{item.quote}”</p>
 
                 <a
@@ -152,39 +164,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The OH SH!T Diaries (timeline + CTAs) */}
-      <section className="px-6 pb-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white/10 p-4 rounded-lg">
-            <h3 className="font-serif text-xl mb-2">The OH SH!T Diaries</h3>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>📘 Part 1 – Released September 30th 2025</li>
-              <li>💉 Part 2 – Chemotherapy – Coming Spring 2026</li>
-              <li>🌱 Part 3 – The After Effect and Challenges – Coming Autumn 2026</li>
-            </ul>
+      {/* The OH SH!T Diaries (refined) */}
+      <section id="diaries" className="px-6 py-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+            <div className="h-1 w-full bg-gradient-to-r from-amber-400/70 via-amber-300/70 to-amber-400/70" />
 
-            {/* Smaller, classy buttons: inline, outline, subtle shadow */}
-            <div className="flex flex-wrap gap-3 justify-start mt-5">
-              <a
-                href="#newsletter"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const el = document.getElementById("newsletter");
-                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className="inline-flex items-center rounded-lg border border-white/30 px-4 py-2 text-sm font-medium text-white/90 shadow-sm hover:bg-white/10"
-              >
-                Register your interest in Parts 2 and 3
-              </a>
+            <div className="p-6 sm:p-8">
+              <h3 className="font-serif text-2xl sm:text-3xl mb-6 flex items-center gap-2">
+                <span className="inline-block h-2 w-2 rounded-full bg-amber-400" />
+                The OH SH!T Diaries
+              </h3>
 
-              <a
-                href={JUSTGIVING_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-lg border border-white/30 px-4 py-2 text-sm font-medium text-white/90 shadow-sm hover:bg-white/10"
-              >
-                Donate via JustGiving
-              </a>
+              <ul className="space-y-3 text-white/90">
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-300 mt-0.5">📘</span>
+                  <span>Part 1 — Released September 30th 2025</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-300 mt-0.5">✍️</span>
+                  <span>Part 2 — Chemotherapy — Coming Spring 2026</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-amber-300 mt-0.5">🌱</span>
+                  <span>The After Effect &amp; Challenges — Coming Autumn 2026</span>
+                </li>
+              </ul>
+
+              <div className="my-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+              {/* CTAs (premium style + focus ring + amber hover) */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="#newsletter"
+                  onClick={go("#newsletter")}
+                  className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
+                             hover:bg-amber-300/15 transition-colors
+                             focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
+                >
+                  Register your interest in Parts 2 and 3
+                </a>
+
+                <a
+                  href={JUSTGIVING_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
+                             hover:bg-amber-300/15 transition-colors
+                             focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
+                >
+                  Donate via JustGiving
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -202,6 +233,9 @@ export default function Home() {
                 <img
                   src={katImg}
                   alt="Katrina Macdermid"
+                  loading="lazy"
+                  width="80"
+                  height="80"
                   className="w-20 h-20 rounded-full object-cover"
                 />
                 <div>
@@ -222,6 +256,9 @@ export default function Home() {
                 <img
                   src={kevImg}
                   alt="Kevin Donaghy"
+                  loading="lazy"
+                  width="80"
+                  height="80"
                   className="w-20 h-20 rounded-full object-cover"
                 />
                 <div>
@@ -238,41 +275,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Supported by: white panel + larger logos */}
-      <section id="support" className="bg-white text-[#0e2a2f] px-6 py-14">
-        <div className="max-w-5xl mx-auto text-center">
-          <h3 className="font-serif text-2xl sm:text-3xl mb-6">Supported By</h3>
-          <div className="flex justify-center gap-10 items-center flex-wrap">
-            <img
-              src={bowelCancerLogo}
-              alt="Bowel Cancer UK"
-              className="h-16 md:h-20 object-contain"
-            />
-            <img
-              src={grcLogo}
-              alt="GRC"
-              className="h-16 md:h-20 object-contain"
-            />
-          </div>
-          <p className="mt-6 text-sm text-[#0e2a2f]/70">
-            A percentage of profits are being donated to Bowel Cancer UK.
-          </p>
-        </div>
-      </section>
+  {/* Supported by: white panel + larger logos */}
+<section id="support" className="bg-[#0e2a2f] px-6 py-14">
+  <div className="max-w-5xl mx-auto text-center">
+    <h3 className="font-serif text-2xl sm:text-3xl mb-6">Supported By</h3>
+    <div className="bg-white rounded-xl p-6 inline-flex justify-center gap-10 items-center flex-wrap shadow">
+      <img
+        src={bowelCancerLogo}
+        alt="Bowel Cancer UK"
+        className="h-16 md:h-20 object-contain"
+      />
+      <img
+        src={grcLogo}
+        alt="GRC"
+        className="h-16 md:h-20 object-contain"
+      />
+    </div>
+    <p className="mt-6 text-sm text-white font-medium">
+      A percentage of profits are being donated to Bowel Cancer UK (Charity No: 1071038).
+    </p>
+  </div>
+</section>
 
-      {/* Stay in the loop (simple Mailchimp form) */}
+      {/* Stay in the loop (Mailchimp) */}
       <section id="newsletter" className="bg-white/5 py-14 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-serif text-2xl sm:text-3xl mb-4">Stay in the loop</h2>
-          <p className="text-neutral-300 mb-3 px-1">
-  Want updates on events, speaking, and Part Two?
-</p>
-<p className="text-neutral-300 mb-3 px-1">
-  Drop your email below.
-</p>
-<p className="text-neutral-300 mb-6 px-1">
-  I’ll ping you when there’s news.
-</p>
+
+          {/* split into 3 readable lines */}
+          <p className="text-neutral-300 mb-3 px-1">Want updates on events, speaking, and Part Two?</p>
+          <p className="text-neutral-300 mb-3 px-1">Drop your email below.</p>
+          <p className="text-neutral-300 mb-6 px-1">I’ll ping you when there’s news.</p>
 
           <form
             action="https://solsevenstudio.us20.list-manage.com/subscribe/post?u=defbb93410f7ef85725de88b1&id=0520fdc9c0&f_id=00807deef0"
@@ -299,14 +332,16 @@ export default function Home() {
             </div>
             <button
               type="submit"
-              className="rounded-xl px-6 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
+              className="inline-flex items-center rounded-xl border border-white/15 bg-amber-400 px-6 py-2 text-sm font-semibold text-[#0e2a2f] shadow-sm
+                         hover:bg-amber-300 transition-colors
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
             >
               Subscribe
             </button>
           </form>
 
           <p className="text-neutral-400 text-xs mt-6">
-            I’ll email occasionally. Unsubscribe anytime.
+            By subscribing you agree to receive occasional updates. Unsubscribe anytime.
           </p>
         </div>
       </section>

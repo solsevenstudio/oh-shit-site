@@ -86,8 +86,29 @@ export default function App() {
           <Route path="/about" element={<About />} />
           {/* Comment out the next line if you don't have Press.jsx yet */}
           <Route path="/press" element={<Press />} />
-          {/* Fallback */}
-          <Route path="*" element={<Home />} />
+
+          {/* 404 fallback */}
+          <Route
+            path="*"
+            element={
+              <main className="bg-[#0e2a2f] text-white min-h-screen flex items-center justify-center text-center p-6">
+                <div>
+                  <h1 className="text-4xl sm:text-6xl font-bold mb-4">
+                    OH SH!T, that page doesn’t exist.
+                  </h1>
+                  <p className="mb-6 text-lg text-neutral-300">
+                    But don’t worry — you can head back to the homepage instead.
+                  </p>
+                  <a
+                    href="/"
+                    className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
+                  >
+                    Go Home
+                  </a>
+                </div>
+              </main>
+            }
+          />
         </Routes>
 
         <footer className="border-t border-white/10">
