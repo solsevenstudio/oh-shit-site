@@ -1,6 +1,6 @@
 import React from "react";
 
-const authorImg = "/assets/david.jpg"; 
+const authorImg = "/assets/Dar.jpg"; 
 export default function About() {
   return (
     <main className="min-h-screen bg-[#0e2a2f] text-white font-sans py-16 px-6">

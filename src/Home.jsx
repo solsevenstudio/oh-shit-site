@@ -19,37 +19,37 @@ const EXTRACTS = [
     title: "Diagnosis",
     quote:
       "As I write these diaries, I have no idea what the ending will be… In Menorca, after my first steak in years, a pain in my left side arrived — and never really left.",
-    href: "/about", // TODO: replace with actual link later
+    href: BUY_LINK,
   },
   {
     title: "Running — ‘fuck you, tumour’",
     quote:
       "Boxing Day: 6km. Every step is me telling cancer to do one. Movement became my rebellion and prep for surgery.",
-    href: "/about",
+    href: BUY_LINK,
   },
   {
     title: "Surgery day",
     quote:
       "Check-in 07:00. By 11:30 I’m in a gown. Bright lights, screens ready to show my insides… and a knot in my stomach.",
-    href: "/about",
+     href: BUY_LINK,
   },
   {
     title: "The ward (and the fart)",
     quote:
       "5,000 steps up and down the ward. Beeps, morphine, and yes — the kind of fart only bowel surgery patients celebrate.",
-    href: "/about",
+     href: BUY_LINK,
   },
   {
     title: "Football medicine",
     quote:
       "Dorking on one iPad, Liverpool on the other. For 90 minutes I didn’t think about cancer or the bag on my stomach.",
-    href: "/about",
+     href: BUY_LINK,
   },
   {
     title: "What next?",
     quote:
       "Mentally I am scarred — but I’m not alone. This book doesn’t end with ‘The End’; it ends with ‘What next?’",
-    href: "/about",
+     href: BUY_LINK,
   },
 ];
 
@@ -152,12 +152,14 @@ export default function Home() {
                 <div className="h-px w-10 bg-white/15 mb-4"></div>
                 <p className="italic text-neutral-200 mb-5">“{item.quote}”</p>
 
-                <a
-                  href={item.href}
-                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-white/20 text-white hover:bg-white/10"
-                >
-                  Read the full diary <span aria-hidden>→</span>
-                </a>
+               <a
+  href={item.href || BUY_LINK}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-white/20 text-white hover:bg-white/10"
+>
+  Read the full diary <span aria-hidden>→</span>
+</a>
               </article>
             ))}
           </div>
