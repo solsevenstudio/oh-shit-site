@@ -102,12 +102,13 @@ export default function Press() {
     Download everything in one go: cover (hi-res), author headshot, and a 1-page press note.
   </p>
   <a
-    href="/assets/press-kit.zip"
-    className="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
-  >
-    <FaFileArchive size={18} />
-    Download Press Kit (ZIP)
-  </a>
+  href="/assets/_presskit/presskit.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
+>
+  Download Press Kit
+</a>
 </section>
 
         {/* Contact */}
