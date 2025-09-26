@@ -7,7 +7,7 @@ import Home from "./Home.jsx";
 import About from "./About.jsx";
 import Press from "./Press.jsx"; // if you don't have this file yet, comment this import + its Route
 
-const BUY_LINK = "mailto:david@solsevenstudio.com?subject=OH%20SH!T%20Book%20Order";
+const BUY_LINK = "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
 const EMAIL = "mailto:david@solsevenstudio.com";
 const LINKEDIN = "https://www.linkedin.com/in/davidbarrowsolsevenstudio/";
 

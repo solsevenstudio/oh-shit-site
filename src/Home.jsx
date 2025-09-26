@@ -9,7 +9,7 @@ const grcLogo = "/assets/grc-logo.png";
 
 /** Links (update BUY_LINK later to your product page if needed) */
 const BUY_LINK =
-  "https://itgovernancepublishing.co.uk/product/oh-shit-ive-got-bowel-cancer";
+  "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
 const JUSTGIVING_LINK =
   "https://www.justgiving.com/team/johnbarnesraps#sharePage";
 
@@ -122,7 +122,7 @@ export default function Home() {
 
             {/* Optional Buy — keep commented until you want it here
             <a
-              href={BUY_LINK}
+              href={https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
