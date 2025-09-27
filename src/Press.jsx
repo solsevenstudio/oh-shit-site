@@ -1,9 +1,8 @@
 import React from "react";
 import { FaDownload, FaEnvelope, FaLinkedin } from "react-icons/fa";
-import { FaFileArchive } from "react-icons/fa";
 
-const coverHiRes = "/assets/Cover.jpg";          // use your highest-res cover here
-const authorHeadshot = "/assets/david.jpg";      // optional (drop a headshot into public/assets/david.jpg)
+const coverHiRes = "/assets/Cover.jpg";          
+const authorHeadshot = "/assets/_presskit/dar.jpg";  // updated path to lowercase dar.jpg
 
 export default function Press() {
   return (
@@ -19,6 +18,7 @@ export default function Press() {
 
         {/* Downloads */}
         <section className="grid md:grid-cols-2 gap-8 mb-14">
+          {/* Cover */}
           <div className="bg-white/10 rounded-2xl p-6">
             <h2 className="font-semibold mb-3">Book Cover (hi-res)</h2>
             <img src={coverHiRes} alt="Book cover" className="rounded-xl mb-4 shadow" />
@@ -28,10 +28,11 @@ export default function Press() {
               className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
             >
               <FaDownload size={18} />
-              Download JPG
+              Download Book Cover
             </a>
           </div>
 
+          {/* Author Photo */}
           <div className="bg-white/10 rounded-2xl p-6">
             <h2 className="font-semibold mb-3">Author Photo</h2>
             <div className="aspect-square bg-white/5 rounded-xl grid place-items-center mb-4 overflow-hidden">
@@ -39,7 +40,7 @@ export default function Press() {
                 <img src={authorHeadshot} alt="David Barrow" className="w-full h-full object-cover" />
               ) : (
                 <p className="text-neutral-400 text-sm px-4 text-center">
-                  Drop a headshot at <code>/public/assets/david.jpg</code> to show it here.
+                  Drop a headshot at <code>/public/assets/_presskit/dar.jpg</code> to show it here.
                 </p>
               )}
             </div>
@@ -49,7 +50,7 @@ export default function Press() {
               className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
             >
               <FaDownload size={18} />
-              Download JPG
+              Download Author Photo
             </a>
           </div>
         </section>
@@ -95,21 +96,22 @@ export default function Press() {
           </p>
         </section>
 
-{/* One-click press kit */}
-<section className="mb-14">
-  <h2 className="font-serif text-2xl mb-4">Press Kit (ZIP)</h2>
-  <p className="text-neutral-300 mb-4">
-    Download everything in one go: cover (hi-res), author headshot, and a 1-page press note.
-  </p>
-  <a
-  href="/assets/_presskit/presskit.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
->
-  Download Press Kit
-</a>
-</section>
+        {/* One-click press kit */}
+        <section className="mb-14">
+          <h2 className="font-serif text-2xl mb-4">Press Kit (PDF)</h2>
+          <p className="text-neutral-300 mb-4">
+            Download everything in one go: cover (hi-res), author headshot, and a 1-page press note.
+          </p>
+          <a
+            href="/assets/_presskit/presskit.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
+          >
+            <FaDownload size={18} />
+            Download Press Kit
+          </a>
+        </section>
 
         {/* Contact */}
         <section className="text-center">
