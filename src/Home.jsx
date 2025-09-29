@@ -120,17 +120,18 @@ export default function Home() {
               <span className="italic">(reg. Charity no: 1071038)</span>.
             </p>
 
-            {/* Optional Buy — keep commented until you want it here
-            <a
-              href={https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
-                         hover:bg-amber-300/15 transition-colors
-                         focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
-            >
-              Buy the Book
-            </a> */}
+        {/* Optional Buy — keep commented until you want it here
+<a
+  href="https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
+             hover:bg-amber-300/15 transition-colors
+             focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
+>
+  Buy the Book
+</a>
+*/}
           </div>
         </div>
       </section>
