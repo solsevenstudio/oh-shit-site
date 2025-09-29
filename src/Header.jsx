@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 
-const BUY_LINK  = "mailto:david@solsevenstudio.com?subject=OH%20SH!T%20Book%20Order";
+const BUY_LINK  = "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
 const EMAIL     = "mailto:david@solsevenstudio.com";
 const LINKEDIN  = "https://www.linkedin.com/in/davidbarrowsolsevenstudio/";
 
