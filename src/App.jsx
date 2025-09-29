@@ -1,22 +1,23 @@
 // src/App.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes, FaXmark } from "react-icons/fa6";
 
 import Home from "./Home.jsx";
 import About from "./About.jsx";
-import Press from "./Press.jsx"; // if you don't have this file yet, comment this import + its Route
+import Press from "./Press.jsx"; // if you don't have this yet, comment the import + its Route
 
-const BUY_LINK = "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
+const BUY_LINK = "mailto:david@solsevenstudio.com?subject=OH%20SH!T%20Book%20Order";
 const EMAIL = "mailto:david@solsevenstudio.com";
 const LINKEDIN = "https://www.linkedin.com/in/davidbarrowsolsevenstudio/";
 
+/* ----------------------------- Header (nav) ----------------------------- */
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
   const link = "hover:text-amber-400";
+
   return (
-    <header className="sticky top-0 z-50 backdrop-blur bg-[#0e2a2f]/90 border-b border-white/10">
+    <header className="sticky top-0 z-40 backdrop-blur bg-[#0e2a2f]/90 border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <NavLink to="/" className="font-serif text-lg md:text-xl">
           OH SH!T, I’ve Got Bowel Cancer
@@ -76,39 +77,74 @@ function Header() {
   );
 }
 
+/* ---------------------- Dismissible Site-wide Banner --------------------- */
+function SiteBanner() {
+  const STORAGE_KEY = "bannerDismissed_v1";
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem(STORAGE_KEY);
+    if (dismissed === "true") setVisible(false);
+  }, []);
+
+  const close = () => {
+    localStorage.setItem(STORAGE_KEY, "true");
+    setVisible(false);
+  };
+
+  if (!visible) return null;
+
+  return (
+    <div className="fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto max-w-6xl relative">
+        <div className="bg-amber-100 text-[#0e2a2f] text-center py-2.5 px-12 shadow-sm border border-amber-200/70 rounded-b-xl text-sm md:text-base">
+          Paperback formats are available for all <em>OH SH!T – I’ve Got Bowel Cancer</em> on request.
+          <br className="hidden sm:block" />
+          Please contact us:
+          <a href="mailto:team@itgovernancepublishing.co.uk" className="underline ml-1 hover:opacity-80">
+            team@itgovernancepublishing.co.uk
+          </a>
+          <span className="mx-2">|</span>
+          <a href="tel:+443336669000" className="underline hover:opacity-80">
+            +44 (0)333 666 9000
+          </a>
+        </div>
+
+        {/* X button */}
+        <button
+          onClick={close}
+          aria-label="Dismiss announcement"
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-md hover:bg-amber-200/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+          title="Dismiss"
+        >
+          <FaXmark />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* --------------------------------- App ---------------------------------- */
 export default function App() {
+  // If the banner is visible, we need a spacer so content sits below it.
+  // We can’t easily read SiteBanner’s visibility here, so we always include a small spacer;
+  // the header’s sticky position means the layout still feels right.
   return (
     <div className="min-h-screen bg-[#0e2a2f] text-white font-sans">
       <Router>
+        <SiteBanner />
+        {/* Spacer so content sits below the fixed banner */}
+        <div className="h-14" />
+
         <Header />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           {/* Comment out the next line if you don't have Press.jsx yet */}
           <Route path="/press" element={<Press />} />
-
           {/* 404 fallback */}
-          <Route
-            path="*"
-            element={
-              <main className="bg-[#0e2a2f] text-white min-h-screen flex items-center justify-center text-center p-6">
-                <div>
-                  <h1 className="text-4xl sm:text-6xl font-bold mb-4">
-                    OH SH!T, that page doesn’t exist.
-                  </h1>
-                  <p className="mb-6 text-lg text-neutral-300">
-                    But don’t worry — you can head back to the homepage instead.
-                  </p>
-                  <a
-                    href="/"
-                    className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
-                  >
-                    Go Home
-                  </a>
-                </div>
-              </main>
-            }
-          />
+          <Route path="*" element={<Home />} />
         </Routes>
 
         <footer className="border-t border-white/10">
