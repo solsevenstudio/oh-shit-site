@@ -1,19 +1,26 @@
+// src/Home.jsx
 import React from "react";
 
-/** Public assets (in /public/assets) — keep these filenames */
+/** Public assets (in /public/assets) */
+const coverWebp = "/assets/Cover.webp";
 const coverImg = "/assets/Cover.jpg";
+
+const katWebp = "/assets/kat.webp";
 const katImg = "/assets/kat.png";
+
+const kevWebp = "/assets/kevin.webp";
 const kevImg = "/assets/kevin.jpg";
+
 const bowelCancerLogo = "/assets/bowel-cancer-uk-logo.png";
 const grcLogo = "/assets/grc-logo.png";
 
-/** Links (update BUY_LINK later to your product page if needed) */
+/** Links */
 const BUY_LINK =
   "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
 const JUSTGIVING_LINK =
   "https://www.justgiving.com/team/johnbarnesraps#sharePage";
 
-/** Short diary extracts to preview on the homepage */
+/** Short diary extracts */
 const EXTRACTS = [
   {
     title: "Diagnosis",
@@ -31,29 +38,29 @@ const EXTRACTS = [
     title: "Surgery day",
     quote:
       "Check-in 07:00. By 11:30 I’m in a gown. Bright lights, screens ready to show my insides… and a knot in my stomach.",
-     href: BUY_LINK,
+    href: BUY_LINK,
   },
   {
     title: "The ward (and the fart)",
     quote:
       "5,000 steps up and down the ward. Beeps, morphine, and yes — the kind of fart only bowel surgery patients celebrate.",
-     href: BUY_LINK,
+    href: BUY_LINK,
   },
   {
     title: "Football medicine",
     quote:
       "Dorking on one iPad, Liverpool on the other. For 90 minutes I didn’t think about cancer or the bag on my stomach.",
-     href: BUY_LINK,
+    href: BUY_LINK,
   },
   {
     title: "What next?",
     quote:
       "Mentally I am scarred — but I’m not alone. This book doesn’t end with ‘The End’; it ends with ‘What next?’",
-     href: BUY_LINK,
+    href: BUY_LINK,
   },
 ];
 
-/** Smooth scroll helper for in-page anchors */
+/** Smooth scroll helper */
 const go = (id) => (e) => {
   e.preventDefault();
   document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -65,15 +72,18 @@ export default function Home() {
       {/* Hero: cover + About the Book */}
       <section className="px-6 py-14 sm:py-16 md:py-24 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          {/* Book cover — neat sizing, no cropping */}
+          {/* Book cover */}
           <div className="relative md:h-full flex justify-center items-start">
-            <img
-              src={coverImg}
-              alt="OH SH!T, I’ve Got Bowel Cancer book cover"
-              width="900"
-              height="1200"
-              className="w-full md:w-auto md:max-h-[640px] object-contain rounded-xl shadow-lg"
-            />
+            <picture>
+              <source srcSet={coverWebp} type="image/webp" />
+              <img
+                src={coverImg}
+                alt="OH SH!T, I’ve Got Bowel Cancer book cover"
+                width="900"
+                height="1200"
+                className="w-full md:w-auto md:max-h-[640px] object-contain rounded-xl shadow-lg"
+              />
+            </picture>
           </div>
 
           {/* About the Book */}
@@ -119,19 +129,6 @@ export default function Home() {
               <span className="font-bold">Bowel Cancer UK</span>{" "}
               <span className="italic">(reg. Charity no: 1071038)</span>.
             </p>
-
-        {/* Optional Buy — keep commented until you want it here
-<a
-  href="https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
-             hover:bg-amber-300/15 transition-colors
-             focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
->
-  Buy the Book
-</a>
-*/}
           </div>
         </div>
       </section>
@@ -153,73 +150,16 @@ export default function Home() {
                 <div className="h-px w-10 bg-white/15 mb-4"></div>
                 <p className="italic text-neutral-200 mb-5">“{item.quote}”</p>
 
-               <a
-  href={item.href || BUY_LINK}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-white/20 text-white hover:bg-white/10"
->
-  Read the full diary <span aria-hidden>→</span>
-</a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The OH SH!T Diaries (refined) */}
-      <section id="diaries" className="px-6 py-12">
-        <div className="max-w-5xl mx-auto">
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-            <div className="h-1 w-full bg-gradient-to-r from-amber-400/70 via-amber-300/70 to-amber-400/70" />
-
-            <div className="p-6 sm:p-8">
-              <h3 className="font-serif text-2xl sm:text-3xl mb-6 flex items-center gap-2">
-                <span className="inline-block h-2 w-2 rounded-full bg-amber-400" />
-                The OH SH!T Diaries
-              </h3>
-
-              <ul className="space-y-3 text-white/90">
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-300 mt-0.5">📘</span>
-                  <span>Part 1 — Released September 30th 2025</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-300 mt-0.5">✍️</span>
-                  <span>Part 2 — Chemotherapy — Coming Spring 2026</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-amber-300 mt-0.5">🌱</span>
-                  <span>The After Effect &amp; Challenges — Coming Autumn 2026</span>
-                </li>
-              </ul>
-
-              <div className="my-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-              {/* CTAs (premium style + focus ring + amber hover) */}
-              <div className="flex flex-wrap gap-3">
                 <a
-                  href="#newsletter"
-                  onClick={go("#newsletter")}
-                  className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
-                             hover:bg-amber-300/15 transition-colors
-                             focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
-                >
-                  Register your interest in Parts 2 and 3
-                </a>
-
-                <a
-                  href={JUSTGIVING_LINK}
+                  href={item.href || BUY_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 shadow-sm
-                             hover:bg-amber-300/15 transition-colors
-                             focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-white/20 text-white hover:bg-white/10"
                 >
-                  Donate via JustGiving
+                  Read the full diary <span aria-hidden>→</span>
                 </a>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -233,14 +173,17 @@ export default function Home() {
             {/* Katrina */}
             <article className="bg-white/10 rounded-2xl p-6 shadow">
               <div className="flex items-center gap-4 mb-4">
-                <img
-                  src={katImg}
-                  alt="Katrina Macdermid"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                  className="w-20 h-20 rounded-full object-cover"
-                />
+                <picture>
+                  <source srcSet={katWebp} type="image/webp" />
+                  <img
+                    src={katImg}
+                    alt="Katrina Macdermid"
+                    loading="lazy"
+                    width="80"
+                    height="80"
+                    className="w-20 h-20 rounded-full object-cover"
+                  />
+                </picture>
                 <div>
                   <p className="font-semibold">Katrina Macdermid</p>
                   <p className="text-sm text-neutral-300">Foreword</p>
@@ -256,14 +199,17 @@ export default function Home() {
             {/* Kevin */}
             <article className="bg-white/10 rounded-2xl p-6 shadow">
               <div className="flex items-center gap-4 mb-4">
-                <img
-                  src={kevImg}
-                  alt="Kevin Donaghy"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                  className="w-20 h-20 rounded-full object-cover"
-                />
+                <picture>
+                  <source srcSet={kevWebp} type="image/webp" />
+                  <img
+                    src={kevImg}
+                    alt="Kevin Donaghy"
+                    loading="lazy"
+                    width="80"
+                    height="80"
+                    className="w-20 h-20 rounded-full object-cover"
+                  />
+                </picture>
                 <div>
                   <p className="font-semibold">Kevin Donaghy</p>
                   <p className="text-sm text-neutral-300">Foreword</p>
@@ -275,77 +221,6 @@ export default function Home() {
               </blockquote>
             </article>
           </div>
-        </div>
-      </section>
-
-  {/* Supported by: white panel + larger logos */}
-<section id="support" className="bg-[#0e2a2f] px-6 py-14">
-  <div className="max-w-5xl mx-auto text-center">
-    <h3 className="font-serif text-2xl sm:text-3xl mb-6">Supported By</h3>
-    <div className="bg-white rounded-xl p-6 inline-flex justify-center gap-10 items-center flex-wrap shadow">
-      <img
-        src={bowelCancerLogo}
-        alt="Bowel Cancer UK"
-        className="h-30 md:h-34 object-contain"
-      />
-      <img
-        src={grcLogo}
-        alt="GRC"
-        className="h-16 md:h-20 object-contain"
-      />
-    </div>
-    <p className="mt-6 text-sm text-white font-medium">
-      A percentage of profits are being donated to Bowel Cancer UK (Charity No: 1071038).
-    </p>
-  </div>
-</section>
-
-      {/* Stay in the loop (Mailchimp) */}
-      <section id="newsletter" className="bg-white/5 py-14 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-2xl sm:text-3xl mb-4">Stay in the loop</h2>
-
-          {/* split into 3 readable lines */}
-          <p className="text-neutral-300 mb-3 px-1">Want updates on events, speaking, and Part Two?</p>
-          <p className="text-neutral-300 mb-3 px-1">Drop your email below.</p>
-          <p className="text-neutral-300 mb-6 px-1">I’ll ping you when there’s news.</p>
-
-          <form
-            action="https://solsevenstudio.us20.list-manage.com/subscribe/post?u=defbb93410f7ef85725de88b1&id=0520fdc9c0&f_id=00807deef0"
-            method="post"
-            target="_blank"
-            noValidate
-            className="flex flex-col sm:flex-row gap-3 justify-center"
-          >
-            <input
-              type="email"
-              name="EMAIL"
-              required
-              placeholder="you@email.com"
-              className="w-full sm:w-auto flex-grow rounded-xl px-3 py-2 bg-white/10 border border-white/20 text-white"
-            />
-            {/* Mailchimp honeypot */}
-            <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
-              <input
-                type="text"
-                name="b_defbb93410f7ef85725de88b1_0520fdc9c0"
-                tabIndex="-1"
-                defaultValue=""
-              />
-            </div>
-            <button
-              type="submit"
-              className="inline-flex items-center rounded-xl border border-white/15 bg-amber-400 px-6 py-2 text-sm font-semibold text-[#0e2a2f] shadow-sm
-                         hover:bg-amber-300 transition-colors
-                         focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
-            >
-              Subscribe
-            </button>
-          </form>
-
-          <p className="text-neutral-400 text-xs mt-6">
-            By subscribing you agree to receive occasional updates. Unsubscribe anytime.
-          </p>
         </div>
       </section>
     </main>
