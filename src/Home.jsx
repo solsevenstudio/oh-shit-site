@@ -7,6 +7,7 @@ const katImg        = "/assets/kat.png";
 const katWebp       = "/assets/kat.webp";
 const kevImg        = "/assets/kevin.jpg";
 const kevWebp       = "/assets/kevin.webp";
+const darWebp   = "/assets/dar.webp";
 const bowelCancerLogo = "/assets/bowel-cancer-uk-logo.png";
 const grcLogo         = "/assets/grc-logo.png";
 
