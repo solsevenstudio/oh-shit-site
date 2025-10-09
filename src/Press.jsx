@@ -1,7 +1,7 @@
 import React from "react";
 import { FaDownload, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
-const coverHiRes = "/assets/Cover.jpg";          
+const coverHiRes = "/assets/Cover.webp";          
 const authorHeadshot = "/assets/_presskit/dar.jpg";  // updated path to lowercase dar.jpg
 
 export default function Press() {
