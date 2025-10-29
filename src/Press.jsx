@@ -1,202 +1,123 @@
+// src/Press.jsx
 import React from "react";
-import { FaDownload, FaEnvelope, FaLinkedin } from "react-icons/fa";
-
-const coverHiRes = "/assets/Cover.webp";          
-const authorHeadshot = "/assets/_presskit/dar.jpg";  // updated path to lowercase dar.jpg
 
 export default function Press() {
   return (
-    <main className="min-h-screen bg-[#0e2a2f] text-white font-sans py-16 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <header className="text-center mb-10">
-          <h1 className="text-4xl font-serif mb-2">Press & Media</h1>
-          <p className="text-neutral-300">
+    <main className="bg-[#0e2a2f] text-white">
+      <section className="px-6 py-12">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="font-serif text-3xl sm:text-4xl mb-8">Press &amp; Media</h1>
+          <p className="text-neutral-300 mb-10">
             Media assets, short bios, and pull quotes for reviews and coverage.
           </p>
-        </header>
 
-        {/* Downloads */}
-        <section className="grid md:grid-cols-2 gap-8 mb-14">
-          {/* Cover */}
-          <div className="bg-white/10 rounded-2xl p-6">
-            <h2 className="font-semibold mb-3">Book Cover (hi-res)</h2>
-            <img src={coverHiRes} alt="Book cover" className="rounded-xl mb-4 shadow" />
-            <a
-              href={coverHiRes}
-              download
-              className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
-            >
-              <FaDownload size={18} />
-              Download Book Cover
-            </a>
+          {/* --- Assets ----------------------------------------------------- */}
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Book cover */}
+            <article className="bg-white/5 rounded-xl border border-white/10 p-4">
+              <h2 className="font-semibold mb-3">Book Cover (hi-res)</h2>
+              <img
+                src="/assets/Cover.webp"
+                alt="Book cover"
+                className="w-full rounded-lg border border-white/10"
+                loading="lazy"
+              />
+              <a
+                href="/assets/Cover.webp"
+                download
+                className="mt-4 inline-flex items-center rounded-xl bg-amber-400 text-[#0e2a2f] px-4 py-2 font-semibold hover:bg-amber-300"
+              >
+                ⬇ Download Book Cover
+              </a>
+            </article>
+
+            {/* Author photo */}
+            <article className="bg-white/5 rounded-xl border border-white/10 p-4">
+              <h2 className="font-semibold mb-3">Author Photo</h2>
+              <img
+                src="/assets/Dar.jpg"
+                alt="David Barrow"
+                className="w-full rounded-lg border border-white/10"
+                loading="lazy"
+              />
+              <a
+                href="/assets/Dar.jpg"
+                download
+                className="mt-4 inline-flex items-center rounded-xl bg-amber-400 text-[#0e2a2f] px-4 py-2 font-semibold hover:bg-amber-300"
+              >
+                ⬇ Download Author Photo
+              </a>
+            </article>
           </div>
 
-          {/* Author Photo */}
-          <div className="bg-white/10 rounded-2xl p-6">
-            <h2 className="font-semibold mb-3">Author Photo</h2>
-            <div className="aspect-square bg-white/5 rounded-xl grid place-items-center mb-4 overflow-hidden">
-              {authorHeadshot ? (
-                <img src={authorHeadshot} alt="David Barrow" className="w-full h-full object-cover" />
-              ) : (
-                <p className="text-neutral-400 text-sm px-4 text-center">
-                  Drop a headshot at <code>/public/assets/_presskit/dar.jpg</code> to show it here.
-                </p>
-              )}
+          {/* --- Podcasts & Clips ------------------------------------------ */}
+          <div className="mt-12">
+            <h2 className="font-serif text-2xl sm:text-3xl mb-6">Podcasts &amp; Clips</h2>
+
+            {/* Spotify embed */}
+            <div className="mb-10">
+              <div className="rounded-xl overflow-hidden border border-white/10">
+                <iframe
+                  src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
+                  width="100%"
+                  height="232"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Podcast: OH SH!T episode"
+                />
+              </div>
+              <div className="mt-2 text-sm">
+                <a
+                  href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-amber-300 hover:text-amber-200"
+                >
+                  Open on Spotify
+                </a>
+              </div>
             </div>
-            <a
-              href={authorHeadshot}
-              download
-              className="inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-amber-400 text-[#0e2a2f] font-semibold hover:bg-amber-300"
-            >
-              <FaDownload size={18} />
-              Download Author Photo
-            </a>
+
+            {/* Two short clips */}
+            <div className="grid gap-6 sm:grid-cols-2">
+              <article className="bg-white/5 rounded-xl border border-white/10 p-4">
+                <h3 className="font-semibold mb-3">
+                  He couldn’t leave the hospital until he’d done this
+                </h3>
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/assets/clips/farts.jpg"
+                  className="w-full rounded-lg"
+                >
+                  <source src="/assets/clips/farts.m4v" type="video/mp4" />
+                  Sorry, your browser doesn’t support embedded video.
+                </video>
+              </article>
+
+              <article className="bg-white/5 rounded-xl border border-white/10 p-4">
+                <h3 className="font-semibold mb-3">
+                  1 in 17 men will be diagnosed with this
+                </h3>
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/assets/clips/1in17.jpg"
+                  className="w-full rounded-lg"
+                >
+                  <source src="/assets/clips/1in17.m4v" type="video/mp4" />
+                  Sorry, your browser doesn’t support embedded video.
+                </video>
+              </article>
+            </div>
           </div>
-        </section>
-
-        {/* Bios */}
-        <section className="mb-14">
-          <h2 className="font-serif text-2xl mb-4">Bios</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <article className="bg-white/10 rounded-2xl p-6">
-              <h3 className="font-semibold mb-2">Short (35–50 words)</h3>
-              <p className="text-neutral-200">
-                David Barrow is a consultant, writer, and cancer survivor. His book, <em>OH SH!T, I’ve Got Bowel Cancer</em>,
-                is a raw diary of diagnosis, surgery, football, and recovery. A percentage of profits supports Bowel Cancer UK.
-              </p>
-            </article>
-            <article className="bg-white/10 rounded-2xl p-6">
-              <h3 className="font-semibold mb-2">Medium (90–120 words)</h3>
-              <p className="text-neutral-200">
-                With 30+ years in Service Management, David Barrow brings humanity and humour to tough topics. His book,
-                <em> OH SH!T, I’ve Got Bowel Cancer</em>, began as a diary through diagnosis, running-as-rebellion,
-                surgery, ward walks, and the small wins that make survival possible. It’s not medical advice—it’s a human record.
-                Profits support Bowel Cancer UK.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        {/* Pull quotes */}
-        <section className="mb-14">
-          <h2 className="font-serif text-2xl mb-4">Pull Quotes</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <blockquote className="bg-white/10 rounded-2xl p-6 text-neutral-200 italic leading-relaxed">
-              “This isn’t just a record of symptoms and treatments. It’s about humanity… If it feels like this for you,
-              you’re not failing — you’re human.” — <span className="not-italic font-semibold">Katrina Macdermid</span>
-            </blockquote>
-            <blockquote className="bg-white/10 rounded-2xl p-6 text-neutral-200 italic leading-relaxed">
-              “This book isn’t polished PR. It’s about honesty. The messy business of carrying on… and the small wins
-              that make survival possible.” — <span className="not-italic font-semibold">Kevin Donaghy</span>
-            </blockquote>
-          </div>
-          <p className="text-neutral-400 text-sm mt-3">
-            Please attribute quotes to the speakers above and reference the book title on first use.
-          </p>
-        </section>
-
-        {/* One-click press kit */}
-        <section className="mb-14">
-          <h2 className="font-serif text-2xl mb-4">Press Kit (PDF)</h2>
-          <p className="text-neutral-300 mb-4">
-            Download everything in one go: cover (hi-res), author headshot, and a 1-page press note.
-          </p>
-          <a
-            href="/assets/_presskit/presskit.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-xl px-6 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
-          >
-            <FaDownload size={18} />
-            Download Press Kit
-          </a>
-        </section>
-
-        {/* Contact */}
-        <section className="text-center">
-          <a
-            href="mailto:david@solsevenstudio.com?subject=Media%20Enquiry"
-            className="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-amber-400 text-[#0e2a2f] font-bold hover:bg-amber-300"
-          >
-            <FaEnvelope size={18} />
-            Media Enquiries
-          </a>
-          <a
-            href="https://www.linkedin.com/in/davidbarrowsolsevenstudio/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-3 ml-3 border border-white/20 rounded-xl hover:bg-white/5"
-          >
-            <FaLinkedin size={18} />
-            LinkedIn
-          </a>
-          <p className="text-neutral-400 text-sm mt-4">
-            For review copies or interviews, email David directly.
-          </p>
-        </section>
-{/* --- Podcasts & Clips -------------------------------------------------- */}
-<section className="px-6 py-10">
-  <div className="max-w-6xl mx-auto">
-    <h2 className="font-serif text-2xl sm:text-3xl mb-6">Podcasts & Clips</h2>
-
-    {/* Spotify embed */}
-    <div className="mb-10">
-      <div className="rounded-xl overflow-hidden border border-white/10">
-        <iframe
-          src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
-          width="100%"
-          height="232"
-          frameBorder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Podcast: OH SH!T episode"
-        />
-      </div>
-
-      <div className="mt-2 text-sm">
-        <a
-          href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline text-amber-300 hover:text-amber-200"
-        >
-          Open on Spotify
-        </a>
-      </div>
-    </div>
-
-    {/* Two short clips */}
-    <div className="grid gap-6 sm:grid-cols-2">
-      <article className="bg-white/5 rounded-xl border border-white/10 p-4">
-        <h3 className="font-semibold mb-3">He couldn’t leave the hospital until he’d done this</h3>
-        <video
-          controls
-          playsInline
-          preload="metadata"
-          poster="/assets/clips/farts.jpg"
-          className="w-full rounded-lg"
-        >
-          <source src="/assets/clips/farts.m4v" type="video/mp4" />
-          Sorry, your browser doesn’t support embedded video.
-        </video>
-      </article>
-
-      <article className="bg-white/5 rounded-xl border border-white/10 p-4">
-        <h3 className="font-semibold mb-3">1 in 17 men will be diagnosed with this</h3>
-        <video
-          controls
-          playsInline
-          preload="metadata"
-          poster="/assets/clips/1in17.jpg"
-          className="w-full rounded-lg"
-        >
-          <source src="/assets/clips/1in17.m4v" type="video/mp4" />
-          Sorry, your browser doesn’t support embedded video.
-        </video>
-      </article>
-    </div>
-  </div>
-</section>
-{/* ---------------------------------------------------------------------- */}
+          {/* --------------------------------------------------------------- */}
+        </div>{/* end .max-w-6xl */}
+      </section>
+    </main>
+  );
+}
