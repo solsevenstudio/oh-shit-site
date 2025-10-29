@@ -142,14 +142,28 @@ export default function Press() {
 
     {/* Spotify embed */}
     <div className="mb-10">
-      <div className="relative" style={{ paddingTop: "152px" }}>
+      <div className="rounded-xl overflow-hidden border border-white/10">
         <iframe
-          className="absolute inset-0 w-full h-[232px] rounded-xl border border-white/10"
-          src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator&theme=0"
+          src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
+          width="100%"
+          height="232"
+          frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-          title="Podcast episode: OH SH!T, I’ve Got Bowel Cancer"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Podcast: OH SH!T episode"
         />
+      </div>
+
+      <div className="mt-2 text-sm">
+        <a
+          href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-amber-300 hover:text-amber-200"
+        >
+          Open on Spotify
+        </a>
       </div>
     </div>
 
@@ -186,7 +200,3 @@ export default function Press() {
   </div>
 </section>
 {/* ---------------------------------------------------------------------- */}
-      </div>
-    </main>
-  );
-}
