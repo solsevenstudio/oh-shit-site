@@ -369,53 +369,62 @@ export default function Home() {
 <section className="px-6 py-10">
   <div className="max-w-6xl mx-auto">
     <h2 className="font-serif text-2xl sm:text-3xl mb-2">Podcasts & Clips</h2>
-<p className="text-neutral-400 mb-6">Featuring <span className="text-amber-400 font-semibold">The Graft Podcast</span>, October 2025</p>
+    <p className="text-neutral-400 mb-6">
+      Featuring <span className="text-amber-400 font-semibold">The Graft Podcast</span>, October 2025
+    </p>
 
-{/* Spotify link */}
-<div className="mb-10">
-  <a
-    href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE?si=79e181adaa024edb"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center rounded-xl border border-white/15 bg-amber-400 px-4 py-2 text-sm font-semibold text-[#0e2a2f] shadow-sm hover:bg-amber-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
-  >
-    ▶︎ Listen on Spotify
-  </a>
-  <p className="text-neutral-400 text-xs mt-2">
-    Opens Spotify in a new tab.
-  </p>
+    {/* Spotify – simple, reliable card */}
+    <a
+      href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE?si=79e181adaa024edb"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block mb-10 rounded-xl border border-white/10 bg-white/5 p-5 hover:bg-white/10 transition-colors"
+      aria-label="Open The Graft Podcast episode on Spotify"
+    >
+      <div className="flex items-center gap-4">
+        <div className="h-12 w-12 rounded-lg bg-[#1DB954] flex items-center justify-center text-[#0e2a2f] font-bold">
+          ♪
+        </div>
+        <div className="flex-1">
+          <div className="font-semibold">The Graft Podcast — OH SH!T, I’ve Got Bowel Cancer</div>
+          <div className="text-sm text-neutral-400">Listen on Spotify</div>
+        </div>
+        <span className="text-sm px-3 py-1 rounded-lg bg-amber-400 text-[#0e2a2f] font-semibold">
+          Open
+        </span>
+      </div>
+    </a>
+
+{/* Two short clips (embedded video with posters) */}
+<div className="grid gap-6 sm:grid-cols-2">
+  <article className="bg-white/5 rounded-xl border border-white/10 p-4">
+    <h3 className="font-semibold mb-3">He couldn’t leave the hospital until he’d done this</h3>
+    <video
+      controls
+      playsInline
+      preload="metadata"
+      poster="/assets/clips/farts.jpg"
+      className="w-full rounded-lg"
+    >
+      <source src="/assets/clips/farts.mp4" type="video/mp4" />
+      Sorry, your browser doesn’t support embedded video.
+    </video>
+  </article>
+
+  <article className="bg-white/5 rounded-xl border border-white/10 p-4">
+    <h3 className="font-semibold mb-3">1 in 17 men will be diagnosed with this</h3>
+    <video
+      controls
+      playsInline
+      preload="metadata"
+      poster="/assets/clips/1in17.jpg"
+      className="w-full rounded-lg"
+    >
+      <source src="/assets/clips/1in17.mp4" type="video/mp4" />
+      Sorry, your browser doesn’t support embedded video.
+    </video>
+  </article>
 </div>
-
-    {/* Two short clips */}
-    <div className="grid gap-6 sm:grid-cols-2">
-      <article className="bg-white/5 rounded-xl border border-white/10 p-4">
-        <h3 className="font-semibold mb-3">He couldn’t leave the hospital until he’d done this</h3>
-        <video
-          controls
-          playsInline
-          preload="metadata"
-          poster="/assets/clips/farts.jpg"
-          className="w-full rounded-lg"
-        >
-          <source src="/assets/clips/farts.m4v" type="video/mp4" />
-          Sorry, your browser doesn’t support embedded video.
-        </video>
-      </article>
-
-      <article className="bg-white/5 rounded-xl border border-white/10 p-4">
-        <h3 className="font-semibold mb-3">1 in 17 men will be diagnosed with this</h3>
-        <video
-          controls
-          playsInline
-          preload="metadata"
-          poster="/assets/clips/1in17.jpg"
-          className="w-full rounded-lg"
-        >
-          <source src="/assets/clips/1in17.m4v" type="video/mp4" />
-          Sorry, your browser doesn’t support embedded video.
-        </video>
-      </article>
-    </div>
   </div>
 </section>
 {/* ---------------------------------------------------------------------- */}
