@@ -1,28 +1,35 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
 
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-96x96.png">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+    <!-- Speed up Spotify embed connections -->
+    <link rel="preconnect" href="https://open.spotify.com">
+    <link rel="preconnect" href="https://i.scdn.co" crossorigin>
+    <link rel="preconnect" href="https://scdn.co" crossorigin>
+    <link rel="dns-prefetch" href="https://open.spotify.com">
+    <link rel="dns-prefetch" href="https://i.scdn.co">
+    <link rel="dns-prefetch" href="https://scdn.co">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D0LCZYS5Q6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-96x96.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-  gtag('config', 'G-D0LCZYS5Q6');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0LCZYS5Q6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D0LCZYS5Q6');
+    </script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OH SH!T, I've Got Bowel Cancer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OH SH!T, I've Got Bowel Cancer</title>
 
     <!-- Open Graph -->
     <meta property="og:title" content="OH SH!T, I've Got Bowel Cancer" />
@@ -38,7 +45,7 @@
     <meta name="twitter:description" content="David Barrow’s brutally honest and hopeful diaries of diagnosis, treatment, and survival." />
     <meta name="twitter:image" content="https://ohshtivegotbowelcancer.com/assets/_presskit/buynow.jpg" />
 
-    <!-- Vite will rewrite this to hashed bundles at build time -->
+    <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
   </head>
   <body>
