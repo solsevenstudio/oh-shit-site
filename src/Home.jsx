@@ -24,9 +24,25 @@ const JUSTGIVING_LINK =
   "https://www.justgiving.com/team/johnbarnesraps#sharePage";
 
 /** Short diary extracts to preview on the homepage.
- *  Interleaved Part One / Part Two so the strip shows the range of both books.
+ *  Grouped: Part Two first (newest) then Part One, each in narrative order
+ *  so each book tells a coherent mini-story as you read down the strip.
  */
 const EXTRACTS = [
+  // --- Part Two — In the Fog of Chemotherapy (narrative order) ---
+  {
+    part: "two",
+    title: "Fizzy hands. Frozen eyes.",
+    quote:
+      "Wrapped up like the SAS, all you could see was my eyes — and even they froze together three times on the walk. Hands, feet, cheeks, even a fizzy right bum cheek. Strawberries fizzed in my mouth.",
+    href: BUY_LINK_PART2,
+  },
+  {
+    part: "two",
+    title: "The worst day, mentally",
+    quote:
+      "I’m on the verge of crying. I feel like I’ve gotten old overnight — lost my fitness, lost my spark. And yet — writing to you, the reader, is what pulled me through.",
+    href: BUY_LINK_PART2,
+  },
   {
     part: "two",
     title: "Aperol Shitz & a creamy curse",
@@ -35,18 +51,20 @@ const EXTRACTS = [
     href: BUY_LINK_PART2,
   },
   {
+    part: "two",
+    title: "Running the Isle of Wight",
+    quote:
+      "Six months before diagnosis, I ran 32 miles through the Sussex hills, carrying a tumour I didn’t know was there. When this SH!T is over, I’m coming back — this time to give something back.",
+    href: BUY_LINK_PART2,
+  },
+
+  // --- Part One — Diagnosis & Treatment Diaries (narrative order) ---
+  {
     part: "one",
     title: "Diagnosis",
     quote:
       "As I write these diaries, I have no idea what the ending will be… In Menorca, after my first steak in years, a pain in my left side arrived — and never really left.",
     href: BUY_LINK_PART1,
-  },
-  {
-    part: "two",
-    title: "Fizzy hands. Frozen eyes.",
-    quote:
-      "Wrapped up like the SAS, all you could see was my eyes — and even they froze together three times on the walk. Hands, feet, cheeks, even a fizzy right bum cheek. Strawberries fizzed in my mouth.",
-    href: BUY_LINK_PART2,
   },
   {
     part: "one",
@@ -56,25 +74,11 @@ const EXTRACTS = [
     href: BUY_LINK_PART1,
   },
   {
-    part: "two",
-    title: "Running the Isle of Wight",
-    quote:
-      "Six months before diagnosis, I ran 32 miles through the Sussex hills, carrying a tumour I didn’t know was there. When this SH!T is over, I’m coming back — this time to give something back.",
-    href: BUY_LINK_PART2,
-  },
-  {
     part: "one",
     title: "The ward (and the fart)",
     quote:
       "5,000 steps up and down the ward. Beeps, morphine, and yes — the kind of fart only bowel surgery patients celebrate.",
     href: BUY_LINK_PART1,
-  },
-  {
-    part: "two",
-    title: "The worst day, mentally",
-    quote:
-      "I’m on the verge of crying. I feel like I’ve gotten old overnight — lost my fitness, lost my spark. And yet — writing to you, the reader, is what pulled me through.",
-    href: BUY_LINK_PART2,
   },
   {
     part: "one",
