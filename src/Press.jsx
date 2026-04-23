@@ -12,27 +12,48 @@ export default function Press() {
           </p>
 
           {/* --- Assets ----------------------------------------------------- */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Book cover */}
-            <article className="bg-white/5 rounded-xl border border-white/10 p-4">
-              <h2 className="font-semibold mb-3">Book Cover (hi-res)</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Part One cover */}
+            <article className="bg-white/5 rounded-xl border border-white/10 p-4 flex flex-col">
+              <h2 className="font-semibold mb-3">Part One — Book Cover (hi-res)</h2>
               <img
                 src="/assets/Cover.webp"
-                alt="Book cover"
+                alt="OH SH!T, I’ve Got Bowel Cancer — Part One book cover"
                 className="w-full rounded-lg border border-white/10"
                 loading="lazy"
               />
               <a
                 href="/assets/Cover.webp"
                 download
-                className="mt-4 inline-flex items-center rounded-xl bg-amber-400 text-[#0e2a2f] px-4 py-2 font-semibold hover:bg-amber-300"
+                className="mt-4 inline-flex items-center rounded-xl bg-amber-400 text-[#0e2a2f] px-4 py-2 font-semibold hover:bg-amber-300 self-start"
               >
-                ⬇ Download Book Cover
+                ⬇ Download Part One Cover
+              </a>
+            </article>
+
+            {/* Part Two cover */}
+            <article className="bg-white/5 rounded-xl border border-white/10 p-4 flex flex-col">
+              <h2 className="font-semibold mb-3">Part Two — Book Cover (hi-res)</h2>
+              <picture>
+                <source srcSet="/assets/Cover-Part2.webp" type="image/webp" />
+                <img
+                  src="/assets/Cover-Part2.jpg"
+                  alt="OH SH!T, I’ve Got Bowel Cancer — Part Two: In the Fog of Chemotherapy book cover"
+                  className="w-full rounded-lg border border-white/10"
+                  loading="lazy"
+                />
+              </picture>
+              <a
+                href="/assets/Cover-Part2.jpg"
+                download
+                className="mt-4 inline-flex items-center rounded-xl bg-amber-400 text-[#0e2a2f] px-4 py-2 font-semibold hover:bg-amber-300 self-start"
+              >
+                ⬇ Download Part Two Cover
               </a>
             </article>
 
             {/* Author photo */}
-            <article className="bg-white/5 rounded-xl border border-white/10 p-4">
+            <article className="bg-white/5 rounded-xl border border-white/10 p-4 flex flex-col">
               <h2 className="font-semibold mb-3">Author Photo</h2>
               <img
                 src="/assets/Dar.jpg"
@@ -43,7 +64,7 @@ export default function Press() {
               <a
                 href="/assets/Dar.jpg"
                 download
-                className="mt-4 inline-flex items-center rounded-xl bg-amber-400 text-[#0e2a2f] px-4 py-2 font-semibold hover:bg-amber-300"
+                className="mt-4 inline-flex items-center rounded-xl bg-amber-400 text-[#0e2a2f] px-4 py-2 font-semibold hover:bg-amber-300 self-start"
               >
                 ⬇ Download Author Photo
               </a>

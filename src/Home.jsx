@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 const coverImg      = "/assets/Cover.jpg";
 const coverWebp     = "/assets/Cover.webp";
 const cover2Img     = "/assets/Cover-Part2.jpg";
+const cover2Webp    = "/assets/Cover-Part2.webp";
 const katImg        = "/assets/kat.png";
 const katWebp       = "/assets/kat.webp";
 const kevImg        = "/assets/kevin.jpg";
@@ -152,6 +153,7 @@ function PartTwoSlide() {
     <div className="grid md:grid-cols-2 gap-10 items-start">
       <div className="relative md:h-full flex justify-center items-start">
         <picture>
+          <source srcSet={cover2Webp} type="image/webp" />
           <img
             src={cover2Img}
             alt="OH SH!T, I’ve Got Bowel Cancer — Part Two: In the Fog of Chemotherapy book cover"
