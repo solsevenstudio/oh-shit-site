@@ -23,39 +23,68 @@ const BUY_LINK = BUY_LINK_PART1;
 const JUSTGIVING_LINK =
   "https://www.justgiving.com/team/johnbarnesraps#sharePage";
 
-/** Short diary extracts to preview on the homepage */
+/** Short diary extracts to preview on the homepage.
+ *  Interleaved Part One / Part Two so the strip shows the range of both books.
+ */
 const EXTRACTS = [
   {
+    part: "two",
+    title: "Aperol Shitz & a creamy curse",
+    quote:
+      "Orange poop — ‘Aperol Shitz,’ as my friend Sophie christened it. Horrible, stinky, but f&*king triumphant: it felt like clearing the toxins out. Then BBQ chicken pizza betrayed me too. I now physically detest pizza.",
+    href: BUY_LINK_PART2,
+  },
+  {
+    part: "one",
     title: "Diagnosis",
     quote:
       "As I write these diaries, I have no idea what the ending will be… In Menorca, after my first steak in years, a pain in my left side arrived — and never really left.",
     href: BUY_LINK_PART1,
   },
   {
+    part: "two",
+    title: "Fizzy hands. Frozen eyes.",
+    quote:
+      "Wrapped up like the SAS, all you could see was my eyes — and even they froze together three times on the walk. Hands, feet, cheeks, even a fizzy right bum cheek. Strawberries fizzed in my mouth.",
+    href: BUY_LINK_PART2,
+  },
+  {
+    part: "one",
     title: "Running — ‘fuck you, tumour’",
     quote:
       "Boxing Day: 6km. Every step is me telling cancer to do one. Movement became my rebellion and prep for surgery.",
     href: BUY_LINK_PART1,
   },
   {
-    title: "Surgery day",
+    part: "two",
+    title: "Running the Isle of Wight",
     quote:
-      "Check-in 07:00. By 11:30 I’m in a gown. Bright lights, screens ready to show my insides… and a knot in my stomach.",
-    href: BUY_LINK_PART1,
+      "Six months before diagnosis, I ran 32 miles through the Sussex hills, carrying a tumour I didn’t know was there. When this SH!T is over, I’m coming back — this time to give something back.",
+    href: BUY_LINK_PART2,
   },
   {
+    part: "one",
     title: "The ward (and the fart)",
     quote:
       "5,000 steps up and down the ward. Beeps, morphine, and yes — the kind of fart only bowel surgery patients celebrate.",
     href: BUY_LINK_PART1,
   },
   {
+    part: "two",
+    title: "The worst day, mentally",
+    quote:
+      "I’m on the verge of crying. I feel like I’ve gotten old overnight — lost my fitness, lost my spark. And yet — writing to you, the reader, is what pulled me through.",
+    href: BUY_LINK_PART2,
+  },
+  {
+    part: "one",
     title: "Football medicine",
     quote:
       "Dorking on one iPad, Liverpool on the other. For 90 minutes I didn’t think about cancer or the bag on my stomach.",
     href: BUY_LINK_PART1,
   },
   {
+    part: "one",
     title: "What next?",
     quote:
       "Mentally I am scarred — but I’m not alone. This book doesn’t end with ‘The End’; it ends with ‘What next?’",
@@ -376,25 +405,45 @@ export default function Home() {
           </h2>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {EXTRACTS.map((item, i) => (
-            <article
-              key={i}
-              className="bg-white/10 rounded-2xl p-6 shadow hover:shadow-lg transition-shadow"
-            >
-              <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-              <div className="h-px w-10 bg-white/15 mb-4"></div>
-              <p className="italic text-neutral-200 mb-5">“{item.quote}”</p>
-
-              <a
-                href={item.href || BUY_LINK_PART1}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-white/20 text-white hover:bg-white/10"
+          {EXTRACTS.map((item, i) => {
+            const isTwo = item.part === "two";
+            const pillClass = isTwo
+              ? "bg-amber-400 text-[#0e2a2f]"
+              : "bg-white/10 text-amber-300 border border-amber-300/30";
+            const pillLabel = isTwo ? "Part Two" : "Part One";
+            const cta = isTwo ? "Read in Part Two" : "Read in Part One";
+            return (
+              <article
+                key={i}
+                className="bg-white/10 rounded-2xl p-6 shadow hover:shadow-lg transition-shadow flex flex-col"
               >
-                Read the full diary <span aria-hidden>→</span>
-              </a>
-            </article>
-          ))}
+                <div className="mb-3 flex items-center gap-2">
+                  <span
+                    className={`text-[10px] uppercase tracking-wider font-semibold rounded-full px-2 py-0.5 ${pillClass}`}
+                  >
+                    {pillLabel}
+                  </span>
+                  {isTwo && (
+                    <span className="text-[10px] uppercase tracking-wider font-semibold rounded-full px-2 py-0.5 bg-[#0e2a2f] text-amber-300 border border-amber-300/40">
+                      New
+                    </span>
+                  )}
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                <div className="h-px w-10 bg-white/15 mb-4"></div>
+                <p className="italic text-neutral-200 mb-5">“{item.quote}”</p>
+
+                <a
+                  href={item.href || BUY_LINK_PART1}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-white/20 text-white hover:bg-white/10 self-start"
+                >
+                  {cta} <span aria-hidden>→</span>
+                </a>
+              </article>
+            );
+          })}
         </div>
         </div>
       </section>
