@@ -160,7 +160,7 @@ export default function Home() {
         <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent" aria-hidden="true" />
         <div className="grid md:grid-cols-2 gap-10 items-start">
           {/* Book cover — WEBP + fallback */}
-          <div className="relative md:h-full flex justify-center items-start order-2 md:order-1">
+          <div className="relative md:h-full flex justify-center items-start">
             <picture>
               <img
                 src={cover2Img}
@@ -173,7 +173,7 @@ export default function Home() {
           </div>
 
           {/* About Part Two */}
-          <div className="max-w-xl text-left space-y-4 sm:space-y-5 order-1 md:order-2">
+          <div className="max-w-xl text-left space-y-4 sm:space-y-5">
             <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#0e2a2f] bg-amber-300 rounded-full px-3 py-1">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#0e2a2f]" />
               New · Available Now
