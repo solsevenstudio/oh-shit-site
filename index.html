@@ -54,6 +54,83 @@
     <meta name="twitter:image" content="https://ohshtivegotbowelcancer.com/assets/og/og-both-books.jpg" />
     <meta name="twitter:image:alt" content="OH SH!T, I’ve Got Bowel Cancer — Parts One and Two by David Barrow" />
 
+    <!-- Structured data: author + two Book entries so Google can show cover thumbnails,
+         author, price and availability in search results. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://ohshtivegotbowelcancer.com/#david-barrow",
+          "name": "David Barrow",
+          "alternateName": "Dar",
+          "jobTitle": "Author",
+          "url": "https://ohshtivegotbowelcancer.com/about",
+          "sameAs": [
+            "https://www.linkedin.com/in/davidbarrowsolsevenstudio/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ohshtivegotbowelcancer.com/#website",
+          "url": "https://ohshtivegotbowelcancer.com/",
+          "name": "OH SH!T, I’ve Got Bowel Cancer",
+          "description": "David Barrow’s brutally honest, darkly funny diaries of diagnosis, treatment, chemotherapy and survival.",
+          "inLanguage": "en-GB",
+          "author": { "@id": "https://ohshtivegotbowelcancer.com/#david-barrow" }
+        },
+        {
+          "@type": "Book",
+          "@id": "https://ohshtivegotbowelcancer.com/#part-one",
+          "name": "OH SH!T, I’ve Got Bowel Cancer — Part One: Diagnosis and Treatment Diaries",
+          "alternateName": "OH SH!T, I’ve Got Bowel Cancer: Part One",
+          "author": { "@id": "https://ohshtivegotbowelcancer.com/#david-barrow" },
+          "isbn": "9781787785779",
+          "inLanguage": "en-GB",
+          "bookFormat": "https://schema.org/Paperback",
+          "image": "https://ohshtivegotbowelcancer.com/assets/Cover.webp",
+          "url": "https://ohshtivegotbowelcancer.com/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "IT Governance Publishing",
+            "url": "https://www.itgovernance.co.uk/"
+          },
+          "description": "The first of David Barrow’s OH SH!T diaries — a brutally honest, sometimes funny record of being diagnosed with colorectal cancer, navigating surgery, and finding a way through.",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries",
+            "availability": "https://schema.org/InStock",
+            "priceCurrency": "GBP"
+          }
+        },
+        {
+          "@type": "Book",
+          "@id": "https://ohshtivegotbowelcancer.com/#part-two",
+          "name": "OH SH!T, I’ve Got Bowel Cancer — Part Two: In the Fog of Chemotherapy",
+          "alternateName": "In the Fog of Chemotherapy",
+          "author": { "@id": "https://ohshtivegotbowelcancer.com/#david-barrow" },
+          "inLanguage": "en-GB",
+          "bookFormat": "https://schema.org/Paperback",
+          "image": "https://ohshtivegotbowelcancer.com/assets/Cover-Part2.webp",
+          "url": "https://ohshtivegotbowelcancer.com/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "GRC Solutions",
+            "url": "https://uk.grcsolutions.io/"
+          },
+          "description": "Part Two of the OH SH!T diaries — the chemotherapy chapter. The fog, the fatigue, the weird physical side effects, and an unexpected companion: using AI to track symptoms through treatment.",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://uk.grcsolutions.io/product/oh-sht-ive-got-bowel-cancer-part-two-in-the-fog-of-chemotherapy",
+            "availability": "https://schema.org/InStock",
+            "priceCurrency": "GBP"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
   </head>
