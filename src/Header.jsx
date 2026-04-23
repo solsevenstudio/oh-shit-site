@@ -1,12 +1,80 @@
 // src/Header.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes, FaAmazon } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes, FaAmazon, FaChevronDown } from "react-icons/fa";
 
-const BUY_LINK     = "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
-const AMAZON_LINK  = "https://www.amazon.co.uk/dp/1787785777";
-const EMAIL        = "mailto:david@solsevenstudio.com";
-const LINKEDIN     = "https://www.linkedin.com/in/davidbarrowsolsevenstudio/";
+const BUY_LINK_PART1 = "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
+const BUY_LINK_PART2 = "https://uk.grcsolutions.io/product/oh-sht-ive-got-bowel-cancer-part-two-in-the-fog-of-chemotherapy";
+const AMAZON_LINK    = "https://www.amazon.co.uk/dp/1787785777";
+const EMAIL          = "mailto:david@solsevenstudio.com";
+const LINKEDIN       = "https://www.linkedin.com/in/davidbarrowsolsevenstudio/";
+
+function BuyDropdown() {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={wrapRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        className="rounded-lg px-3 py-1.5 bg-amber-400 text-[#0e2a2f] font-semibold text-sm flex items-center gap-2 hover:bg-amber-300 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+      >
+        <FaShoppingCart /> Buy the Book
+        <FaChevronDown className={`text-xs transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <div
+          role="menu"
+          className="absolute right-0 mt-2 min-w-[240px] rounded-lg border border-white/15 bg-[#0e2a2f] shadow-xl z-50 overflow-hidden"
+        >
+          <a
+            href={BUY_LINK_PART1}
+            target="_blank"
+            rel="noopener noreferrer"
+            role="menuitem"
+            className="block px-4 py-3 text-sm text-white hover:bg-white/10 border-b border-white/10"
+            onClick={() => setOpen(false)}
+          >
+            <div className="font-semibold">Buy Part One</div>
+            <div className="text-xs text-neutral-400">Diagnosis &amp; Treatment Diaries</div>
+          </a>
+          <a
+            href={BUY_LINK_PART2}
+            target="_blank"
+            rel="noopener noreferrer"
+            role="menuitem"
+            className="block px-4 py-3 text-sm text-white hover:bg-white/10"
+            onClick={() => setOpen(false)}
+          >
+            <div className="font-semibold flex items-center gap-2">
+              Buy Part Two
+              <span className="text-[10px] uppercase tracking-wider bg-amber-400 text-[#0e2a2f] rounded-full px-2 py-0.5">New</span>
+            </div>
+            <div className="text-xs text-neutral-400">In the Fog of Chemotherapy</div>
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,15 +99,8 @@ export default function Header() {
              className="flex items-center gap-1 hover:text-amber-400">
             <FaLinkedin /> LinkedIn
           </a>
-          {/* Buttons */}
-          <a
-            href={BUY_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-lg px-3 py-1.5 bg-amber-400 text-[#0e2a2f] font-semibold text-sm flex items-center gap-2 hover:bg-amber-300 whitespace-nowrap"
-          >
-            <FaShoppingCart /> Buy the Book
-          </a>
+          {/* Buy dropdown (Part 1 / Part 2) */}
+          <BuyDropdown />
           <a
             href={AMAZON_LINK}
             target="_blank"
@@ -82,13 +143,23 @@ export default function Header() {
             <FaLinkedin /> LinkedIn
           </a>
           <a
-            href={BUY_LINK}
+            href={BUY_LINK_PART1}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg px-3 py-1.5 bg-amber-400 text-[#0e2a2f] font-semibold text-sm flex items-center gap-2 hover:bg-amber-300 whitespace-nowrap"
             onClick={() => setIsOpen(false)}
           >
-            <FaShoppingCart /> Buy the Book
+            <FaShoppingCart /> Buy Part One
+          </a>
+          <a
+            href={BUY_LINK_PART2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg px-3 py-1.5 bg-amber-400 text-[#0e2a2f] font-semibold text-sm flex items-center gap-2 hover:bg-amber-300 whitespace-nowrap"
+            onClick={() => setIsOpen(false)}
+          >
+            <FaShoppingCart /> Buy Part Two
+            <span className="text-[10px] uppercase tracking-wider bg-[#0e2a2f] text-amber-300 rounded-full px-2 py-0.5 border border-amber-300/40">New</span>
           </a>
           <a
             href={AMAZON_LINK}
