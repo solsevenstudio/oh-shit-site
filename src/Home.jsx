@@ -414,7 +414,7 @@ export default function Home() {
             <div className="flex-1">
               <div className="text-xs uppercase tracking-wider text-amber-400 font-semibold mb-1">As heard on The Graft Podcast</div>
               <h2 className="font-serif text-xl sm:text-2xl text-white mb-2">
-                "The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+                "The Fittest I'd Ever Been — Then I Got Bowel Cancer | GRAFT According to Dar Barrow"
               </h2>
               <p className="text-neutral-300 text-sm leading-relaxed mb-4">
                 Dar was training for ultramarathons when he was diagnosed with stage 3B bowel cancer.

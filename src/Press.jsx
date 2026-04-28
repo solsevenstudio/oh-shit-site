@@ -84,7 +84,7 @@ export default function Press() {
             <div className="mb-10 bg-white/5 rounded-2xl border border-white/10 p-6">
               <div className="mb-1 text-xs uppercase tracking-wider text-amber-400 font-semibold">The Graft Podcast</div>
               <h3 className="font-serif text-xl sm:text-2xl text-white mb-3">
-                "The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+                "The Fittest I'd Ever Been — Then I Got Bowel Cancer | GRAFT According to Dar Barrow"
               </h3>
               <p className="text-neutral-300 leading-relaxed mb-5">
                 Hosted by Ben Glimmerveen, this episode covers how Dar was training for ultramarathons
