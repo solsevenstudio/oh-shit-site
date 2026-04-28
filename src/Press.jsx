@@ -80,9 +80,19 @@ export default function Press() {
           <div className="mt-12">
             <h2 className="font-serif text-2xl sm:text-3xl mb-6">Podcasts &amp; Clips</h2>
 
-            {/* Spotify embed */}
-            <div className="mb-10">
-              <div className="rounded-xl overflow-hidden border border-white/10">
+            {/* Graft Podcast episode */}
+            <div className="mb-10 bg-white/5 rounded-2xl border border-white/10 p-6">
+              <div className="mb-1 text-xs uppercase tracking-wider text-amber-400 font-semibold">The Graft Podcast</div>
+              <h3 className="font-serif text-xl sm:text-2xl text-white mb-3">
+                "The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+              </h3>
+              <p className="text-neutral-300 leading-relaxed mb-5">
+                Hosted by Ben Glimmerveen, this episode covers how Dar was training for ultramarathons
+                when he was diagnosed with stage 3B bowel cancer — and why being fit is no substitute
+                for listening to your body. The conversation covers diagnosis, surgery, chemotherapy,
+                and finding purpose through writing.
+              </p>
+              <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
                 <iframe
                   src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
                   width="100%"
@@ -91,17 +101,25 @@ export default function Press() {
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Podcast: OH SH!T episode"
+                  title="The Graft Podcast: The Fittest I'd Ever Been — Then I Got Bowel Cancer"
                 />
               </div>
-              <div className="mt-2 text-sm">
+              <div className="flex flex-wrap gap-4 text-sm">
                 <a
                   href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline text-amber-300 hover:text-amber-200"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#1DB954] text-white font-semibold hover:opacity-90"
                 >
-                  Open on Spotify
+                  🎵 Listen on Spotify
+                </a>
+                <a
+                  href="https://podcasts.apple.com/ie/podcast/the-fittest-id-ever-been-then-i-got-bowel-cancer/id1811506979?i=1000732918438"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#9333EA] text-white font-semibold hover:opacity-90"
+                >
+                  🎙 Listen on Apple Podcasts
                 </a>
               </div>
             </div>

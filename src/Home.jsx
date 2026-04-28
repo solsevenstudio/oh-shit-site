@@ -406,6 +406,44 @@ export default function Home() {
       {/* Book carousel — Part One / Part Two */}
       <BookCarousel />
 
+      {/* Podcast feature */}
+      <section className="px-6 py-10 bg-[#0a2228]">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+            <div className="flex-shrink-0 text-5xl">🎙</div>
+            <div className="flex-1">
+              <div className="text-xs uppercase tracking-wider text-amber-400 font-semibold mb-1">As heard on The Graft Podcast</div>
+              <h2 className="font-serif text-xl sm:text-2xl text-white mb-2">
+                "The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+              </h2>
+              <p className="text-neutral-300 text-sm leading-relaxed mb-4">
+                Dar was training for ultramarathons when he was diagnosed with stage 3B bowel cancer.
+                Host Ben Glimmerveen talks to him about diagnosis, surgery, chemotherapy — and why
+                fitness is no substitute for listening to your body.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#1DB954] text-white text-sm font-semibold hover:opacity-90"
+                >
+                  🎵 Spotify
+                </a>
+                <a
+                  href="https://podcasts.apple.com/ie/podcast/the-fittest-id-ever-been-then-i-got-bowel-cancer/id1811506979?i=1000732918438"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#9333EA] text-white text-sm font-semibold hover:opacity-90"
+                >
+                  🎙 Apple Podcasts
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Extracts from the diary */}
       <section id="extracts" className="px-6 py-16">
         <div className="max-w-6xl mx-auto">
