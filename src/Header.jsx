@@ -16,7 +16,7 @@ const JOURNEY_LINKS = [
   { to: "/worried",                label: "Worried?",              sub: "Here's where to start" },
 ];
 
-function JourneyDropdown() {
+function LivedExperienceDropdown() {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef(null);
 
@@ -43,7 +43,7 @@ function JourneyDropdown() {
         aria-expanded={open}
         className="flex items-center gap-1 hover:text-amber-400 focus:outline-none"
       >
-        Your Journey <FaChevronDown className={`text-xs transition-transform ${open ? "rotate-180" : ""}`} />
+        My Lived Experience <FaChevronDown className={`text-xs transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <div
@@ -151,7 +151,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6">
           <NavLink to="/about" className={link}>About the Author</NavLink>
           <NavLink to="/press" className={link}>Press</NavLink>
-          <JourneyDropdown />
+          <LivedExperienceDropdown />
           <a href={EMAIL} className="flex items-center gap-1 hover:text-amber-400">
             <FaEnvelope /> Media Enquiries
           </a>
@@ -196,7 +196,7 @@ export default function Header() {
           <NavLink to="/about" onClick={() => setIsOpen(false)}>About the Author</NavLink>
           <NavLink to="/press" onClick={() => setIsOpen(false)}>Press</NavLink>
           <div className="border-t border-white/10 pt-3">
-            <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">Your Journey</p>
+            <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">My Lived Experience</p>
             {JOURNEY_LINKS.map((item) => (
               <NavLink
                 key={item.to}
