@@ -548,7 +548,7 @@ export default function Home() {
                 Review Part One on Amazon
               </a>
               <a
-                href="https://www.amazon.co.uk/Oh-SHT-Ive-bowel-cancer/dp/1787786172"
+                href="https://www.amazon.co.uk/review/create-review/?asin=1787786161"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-amber-400/40 bg-transparent px-5 py-3 text-sm font-semibold text-amber-400 hover:bg-amber-400/10 transition-colors"
