@@ -421,6 +421,18 @@ export default function Home() {
                 Host Ben Glimmerveen talks to him about diagnosis, surgery, chemotherapy — and why
                 fitness is no substitute for listening to your body.
               </p>
+              <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
+                <iframe
+                  src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="The Graft Podcast: The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+                />
+              </div>
               <div className="flex flex-wrap gap-3">
                 <a
                   href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
@@ -428,7 +440,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#1DB954] text-white text-sm font-semibold hover:opacity-90"
                 >
-                  🎵 Spotify
+                  🎵 Watch on Spotify
                 </a>
                 <a
                   href="https://podcasts.apple.com/ie/podcast/the-fittest-id-ever-been-then-i-got-bowel-cancer/id1811506979?i=1000732918438"
