@@ -421,6 +421,15 @@ export default function Home() {
                 Host Ben Glimmerveen talks to him about diagnosis, surgery, chemotherapy — and why
                 fitness is no substitute for listening to your body.
               </p>
+              <blockquote className="border-l-4 border-amber-400 pl-4 mb-6">
+                <p className="text-neutral-200 italic leading-relaxed">
+                  "When public speaker Dar Barrow went on holiday to Menorca, the last thing he expected
+                  was to come home with bowel cancer. Fit, healthy, having just run an ultra marathon —
+                  he had no symptoms, no warning signs."
+                </p>
+                <footer className="text-amber-400 text-sm font-semibold mt-2">— The Graft Podcast</footer>
+              </blockquote>
+
               <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
                 <iframe
                   src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
