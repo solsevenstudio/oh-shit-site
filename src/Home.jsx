@@ -525,6 +525,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Review nudge */}
+      <section className="px-6 py-12">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="rounded-2xl border border-amber-400/30 bg-amber-400/5 p-8">
+            <div className="text-3xl mb-4">⭐</div>
+            <h2 className="font-serif text-2xl sm:text-3xl mb-3 text-white">
+              Already read the book?
+            </h2>
+            <p className="text-neutral-300 leading-relaxed mb-6">
+              Reviews on Amazon make an enormous difference — they help the book reach the people
+              who need it most. If you've read Part One or Part Two and it meant something to you,
+              even two honest sentences would help more than you know.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://www.amazon.co.uk/review/create-review/?asin=1787785777"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-5 py-3 text-sm font-semibold text-[#0e2a2f] hover:bg-amber-300 transition-colors"
+              >
+                Review Part One on Amazon
+              </a>
+              <a
+                href="https://www.amazon.co.uk/Oh-SHT-Ive-bowel-cancer/dp/1787786172"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-amber-400/40 bg-transparent px-5 py-3 text-sm font-semibold text-amber-400 hover:bg-amber-400/10 transition-colors"
+              >
+                Review Part Two on Amazon
+              </a>
+            </div>
+            <p className="text-neutral-500 text-xs mt-4">
+              You'll need to be logged into your Amazon account to leave a review.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Forewords */}
       <section id="forewords" className="bg-[#12343b] px-6 py-16">
         <div className="max-w-5xl mx-auto">
