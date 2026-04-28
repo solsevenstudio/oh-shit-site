@@ -1,10 +1,15 @@
 // src/Worried.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import PageMeta from "./PageMeta.jsx";
 
 export default function Worried() {
   return (
     <main className="min-h-screen bg-[#0e2a2f] text-white font-sans py-16 px-6">
+      <PageMeta
+        title="Worried About Bowel Cancer? Here's What to Do | OH SH!T"
+        description="If you're scared it might be bowel cancer, this is the most useful page I can give you. Where to go, what to say, and what comes next."
+      />
       <article className="max-w-3xl mx-auto">
 
         {/* Breadcrumb */}

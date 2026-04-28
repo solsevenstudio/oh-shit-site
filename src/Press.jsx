@@ -1,9 +1,14 @@
 // src/Press.jsx
 import React from "react";
+import PageMeta from "./PageMeta.jsx";
 
 export default function Press() {
   return (
     <main className="bg-[#0e2a2f] text-white">
+      <PageMeta
+        title="Press & Media | OH SH!T, I've Got Bowel Cancer"
+        description="Press coverage, media enquiries and speaking opportunities for David Barrow, author of OH SH!T, I've Got Bowel Cancer."
+      />
       <section className="px-6 py-12">
         <div className="max-w-6xl mx-auto">
           <h1 className="font-serif text-3xl sm:text-4xl mb-8">Press &amp; Media</h1>

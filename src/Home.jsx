@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import PageMeta from "./PageMeta.jsx";
 
 /** Public assets (in /public/assets) — keep these filenames */
 const coverImg      = "/assets/Cover.jpg";
@@ -398,6 +399,10 @@ function BookCarousel() {
 export default function Home() {
   return (
     <main className="bg-[#0e2a2f] text-white">
+      <PageMeta
+        title="OH SH!T, I've Got Bowel Cancer | David Barrow"
+        description="A raw, honest diary of a bowel cancer diagnosis, surgery and chemotherapy by David Barrow. Written for anyone who needs honesty, humour and hope."
+      />
       {/* Book carousel — Part One / Part Two */}
       <BookCarousel />
 

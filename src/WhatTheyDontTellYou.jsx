@@ -1,10 +1,15 @@
 // src/WhatTheyDontTellYou.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import PageMeta from "./PageMeta.jsx";
 
 export default function WhatTheyDontTellYou() {
   return (
     <main className="min-h-screen bg-[#0e2a2f] text-white font-sans py-16 px-6">
+      <PageMeta
+        title="What No One Tells You About a Bowel Cancer Diagnosis | OH SH!T"
+        description="The practical, emotional, and just plain weird things I learned going through bowel cancer — that I wish someone had put in one place."
+      />
       <article className="max-w-3xl mx-auto">
 
         {/* Breadcrumb */}

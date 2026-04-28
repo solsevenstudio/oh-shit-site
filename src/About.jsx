@@ -1,9 +1,14 @@
 import React from "react";
+import PageMeta from "./PageMeta.jsx";
 
 const authorImg = "/assets/Dar.jpg"; 
 export default function About() {
   return (
     <main className="min-h-screen bg-[#0e2a2f] text-white font-sans py-16 px-6">
+      <PageMeta
+        title="About the Author — David Barrow | OH SH!T, I've Got Bowel Cancer"
+        description="David Barrow is a 48-year-old cancer patient, ultramarathon runner and author documenting his bowel cancer journey with honesty, humour and hope."
+      />
       <article className="max-w-4xl mx-auto">
         {/* Avatar */}
         <img

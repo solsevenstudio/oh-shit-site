@@ -1,10 +1,15 @@
 // src/Symptoms.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import PageMeta from "./PageMeta.jsx";
 
 export default function Symptoms() {
   return (
     <main className="min-h-screen bg-[#0e2a2f] text-white font-sans py-16 px-6">
+      <PageMeta
+        title="Bowel Cancer Symptoms — What I Actually Noticed | OH SH!T"
+        description="Not a medical checklist. This is what bowel cancer symptoms actually felt like for me — the ones I brushed off, and the one that finally made me call the doctor."
+      />
       <article className="max-w-3xl mx-auto">
 
         {/* Breadcrumb */}

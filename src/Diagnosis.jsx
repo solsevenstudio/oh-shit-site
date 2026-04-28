@@ -1,10 +1,15 @@
 // src/Diagnosis.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import PageMeta from "./PageMeta.jsx";
 
 export default function Diagnosis() {
   return (
     <main className="min-h-screen bg-[#0e2a2f] text-white font-sans py-16 px-6">
+      <PageMeta
+        title="Bowel Cancer Diagnosis — What the Process Actually Looks Like | OH SH!T"
+        description="From GP appointment to confirmed diagnosis — what I went through, what surprised me, and what I'd tell anyone starting that journey."
+      />
       <article className="max-w-3xl mx-auto">
 
         {/* Breadcrumb */}
