@@ -1,6 +1,6 @@
 // src/Header.jsx
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes, FaAmazon, FaChevronDown } from "react-icons/fa";
 
 const BUY_LINK_PART1 = "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
@@ -8,6 +8,65 @@ const BUY_LINK_PART2 = "https://uk.grcsolutions.io/product/oh-sht-ive-got-bowel-
 const AMAZON_LINK    = "https://www.amazon.co.uk/dp/1787785777";
 const EMAIL          = "mailto:david@solsevenstudio.com";
 const LINKEDIN       = "https://www.linkedin.com/in/davidbarrowsolsevenstudio/";
+
+const JOURNEY_LINKS = [
+  { to: "/symptoms",               label: "Symptoms",              sub: "The signs I ignored" },
+  { to: "/diagnosis",              label: "Diagnosis",             sub: "What the process looks like" },
+  { to: "/what-they-dont-tell-you",label: "What They Don't Tell You", sub: "The stuff I had to figure out" },
+  { to: "/worried",                label: "Worried?",              sub: "Here's where to start" },
+];
+
+function JourneyDropdown() {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={wrapRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        className="flex items-center gap-1 hover:text-amber-400 focus:outline-none"
+      >
+        Your Journey <FaChevronDown className={`text-xs transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div
+          role="menu"
+          className="absolute left-0 mt-2 min-w-[260px] rounded-lg border border-white/15 bg-[#0e2a2f] shadow-xl z-50 overflow-hidden"
+        >
+          {JOURNEY_LINKS.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              role="menuitem"
+              onClick={() => setOpen(false)}
+              className="block px-4 py-3 text-sm text-white hover:bg-white/10 border-b border-white/10 last:border-0"
+            >
+              <div className="font-semibold">{item.label}</div>
+              <div className="text-xs text-neutral-400">{item.sub}</div>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function BuyDropdown() {
   const [open, setOpen] = useState(false);
@@ -92,6 +151,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6">
           <NavLink to="/about" className={link}>About the Author</NavLink>
           <NavLink to="/press" className={link}>Press</NavLink>
+          <JourneyDropdown />
           <a href={EMAIL} className="flex items-center gap-1 hover:text-amber-400">
             <FaEnvelope /> Media Enquiries
           </a>
@@ -135,6 +195,19 @@ export default function Header() {
           <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
           <NavLink to="/about" onClick={() => setIsOpen(false)}>About the Author</NavLink>
           <NavLink to="/press" onClick={() => setIsOpen(false)}>Press</NavLink>
+          <div className="border-t border-white/10 pt-3">
+            <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">Your Journey</p>
+            {JOURNEY_LINKS.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={() => setIsOpen(false)}
+                className="block py-1.5 hover:text-amber-400"
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
           <a href={EMAIL} className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
             <FaEnvelope /> Media Enquiries
           </a>

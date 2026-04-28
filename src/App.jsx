@@ -6,6 +6,10 @@ import Header from "./Header.jsx";
 import Home from "./Home.jsx";
 import About from "./About.jsx";
 import Press from "./Press.jsx";
+import Symptoms from "./Symptoms.jsx";
+import Diagnosis from "./Diagnosis.jsx";
+import WhatTheyDontTellYou from "./WhatTheyDontTellYou.jsx";
+import Worried from "./Worried.jsx";
 
 function AnnouncementBanner() {
   const [dismissed, setDismissed] = useState(false);
@@ -113,6 +117,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/press" element={<Press />} />
+          <Route path="/symptoms" element={<Symptoms />} />
+          <Route path="/diagnosis" element={<Diagnosis />} />
+          <Route path="/what-they-dont-tell-you" element={<WhatTheyDontTellYou />} />
+          <Route path="/worried" element={<Worried />} />
           {/* Fallback */}
           <Route path="*" element={<Home />} />
         </Routes>
