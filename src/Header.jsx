@@ -151,6 +151,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6">
           <NavLink to="/about" className={link}>About the Author</NavLink>
           <NavLink to="/press" className={link}>Press</NavLink>
+          <NavLink to="/bowel-cancer-uk" className={link}>Bowel Cancer UK</NavLink>
           <LivedExperienceDropdown />
           <a href={EMAIL} className="flex items-center gap-1 hover:text-amber-400">
             <FaEnvelope /> Media Enquiries
@@ -195,6 +196,7 @@ export default function Header() {
           <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
           <NavLink to="/about" onClick={() => setIsOpen(false)}>About the Author</NavLink>
           <NavLink to="/press" onClick={() => setIsOpen(false)}>Press</NavLink>
+          <NavLink to="/bowel-cancer-uk" onClick={() => setIsOpen(false)}>Bowel Cancer UK</NavLink>
           <div className="border-t border-white/10 pt-3">
             <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">My Lived Experience</p>
             {JOURNEY_LINKS.map((item) => (
