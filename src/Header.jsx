@@ -1,7 +1,7 @@
 // src/Header.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes, FaAmazon, FaChevronDown } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaShoppingCart, FaBars, FaTimes, FaAmazon, FaChevronDown, FaHome } from "react-icons/fa";
 
 const BUY_LINK_PART1 = "https://www.itgovernance.co.uk/shop/product/oh-sht-ive-got-bowel-cancer-part-one-diagnosis-and-treatment-diaries";
 const BUY_LINK_PART2 = "https://uk.grcsolutions.io/product/oh-sht-ive-got-bowel-cancer-part-two-in-the-fog-of-chemotherapy";
@@ -143,8 +143,13 @@ export default function Header() {
     <header className="sticky top-0 z-40 backdrop-blur bg-[#0e2a2f]/90 border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Nav */}
-        <NavLink to="/" className="font-serif text-lg md:text-xl">
-          Home
+        <NavLink
+          to="/"
+          aria-label="Home"
+          title="Home"
+          className="text-2xl md:text-3xl hover:text-amber-400 transition-colors"
+        >
+          <FaHome />
         </NavLink>
 
         {/* Desktop nav */}
