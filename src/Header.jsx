@@ -137,7 +137,7 @@ function BuyDropdown() {
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const link = "hover:text-amber-400";
+  const link = "hover:text-amber-400 whitespace-nowrap";
 
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-[#0e2a2f]/90 border-b border-white/10">
@@ -148,17 +148,26 @@ export default function Header() {
         </NavLink>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
           <NavLink to="/about" className={link}>About the Author</NavLink>
           <NavLink to="/press" className={link}>Press</NavLink>
           <NavLink to="/bowel-cancer-uk" className={link}>Bowel Cancer UK</NavLink>
           <LivedExperienceDropdown />
-          <a href={EMAIL} className="flex items-center gap-1 hover:text-amber-400">
-            <FaEnvelope /> Media Enquiries
+          <a
+            href={EMAIL}
+            aria-label="Media Enquiries"
+            className="flex items-center gap-1 hover:text-amber-400 whitespace-nowrap"
+          >
+            <FaEnvelope /> <span className="hidden xl:inline">Media Enquiries</span>
           </a>
-          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer"
-             className="flex items-center gap-1 hover:text-amber-400">
-            <FaLinkedin /> LinkedIn
+          <a
+            href={LINKEDIN}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="flex items-center gap-1 hover:text-amber-400 whitespace-nowrap"
+          >
+            <FaLinkedin /> <span className="hidden xl:inline">LinkedIn</span>
           </a>
           {/* Buy dropdown (Part 1 / Part 2) */}
           <BuyDropdown />
@@ -168,7 +177,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="rounded-lg px-3 py-1.5 bg-[#FF9900] text-white font-semibold text-sm flex items-center gap-2 hover:bg-[#e68a00] whitespace-nowrap"
           >
-            <FaAmazon /> Available via Amazon
+            <FaAmazon /> <span className="lg:hidden">Amazon</span><span className="hidden lg:inline">Available via Amazon</span>
           </a>
         </nav>
 
