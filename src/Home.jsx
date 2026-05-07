@@ -682,25 +682,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Supported by: white panel + larger logos */}
-      <section id="support" className="bg-[#0e2a2f] px-6 py-14">
-        <div className="max-w-5xl mx-auto text-center">
-          <h3 className="font-serif text-2xl sm:text-3xl mb-6">Supported By</h3>
-          <div className="bg-white rounded-xl p-6 inline-flex justify-center gap-10 items-center flex-wrap shadow">
-            <img
-              src={bowelCancerLogo}
-              alt="Bowel Cancer UK"
-              className="h-30 md:h-34 object-contain"
-            />
-            <img
-              src={grcLogo}
-              alt="GRC"
-              className="h-16 md:h-20 object-contain"
-            />
-          </div>
-          <p className="mt-6 text-sm text-white font-medium">
-            A percentage of profits are being donated to Bowel Cancer UK (Charity No: 1071038).
+      {/* Supporting Bowel Cancer UK */}
+      <section id="support" className="bg-[#0e2a2f] px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-serif text-2xl sm:text-3xl mb-3 text-center">
+            Supporting Bowel Cancer UK
+          </h2>
+          <p className="text-center text-neutral-300 max-w-2xl mx-auto mb-10">
+            A percentage of profits from every copy of OH SH!T, I&rsquo;ve Got Bowel
+            Cancer is donated to Bowel Cancer UK{" "}
+            <span className="text-neutral-400">(Charity No: 1071038)</span>.
           </p>
+
+          {/* Logo panel */}
+          <div className="flex justify-center mb-10">
+            <div className="bg-white rounded-xl p-6 inline-flex justify-center gap-10 items-center flex-wrap shadow">
+              <img
+                src={bowelCancerLogo}
+                alt="Bowel Cancer UK"
+                className="h-28 md:h-32 object-contain"
+              />
+              <img
+                src={grcLogo}
+                alt="GRC"
+                className="h-16 md:h-20 object-contain"
+              />
+            </div>
+          </div>
+
+          {/* About + Quote */}
+          <div className="grid gap-6 md:grid-cols-2 items-stretch">
+            {/* About Bowel Cancer UK */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col">
+              <h3 className="font-serif text-xl sm:text-2xl mb-4 text-amber-300">
+                About Bowel Cancer UK
+              </h3>
+              <p className="text-neutral-200 leading-relaxed mb-4">
+                We&rsquo;re the UK&rsquo;s leading bowel cancer charity. We&rsquo;re
+                determined to save lives and improve the quality of life of everyone
+                affected by bowel cancer.
+              </p>
+              <p className="text-amber-200 leading-relaxed font-medium">
+                Our vision is a future where nobody dies of the disease.
+              </p>
+              <div className="mt-auto pt-6">
+                <a
+                  href="https://www.bowelcanceruk.org.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-amber-400/40 text-amber-400 hover:bg-amber-400/10 transition-colors"
+                >
+                  Visit Bowel Cancer UK <span aria-hidden>→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Luke Squires quote */}
+            <article className="bg-white/10 rounded-2xl p-6 sm:p-8 shadow border border-white/10 flex flex-col">
+              <div
+                className="font-serif text-5xl text-amber-300 leading-none mb-2"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </div>
+              <blockquote className="italic text-neutral-100 leading-relaxed mb-6">
+                We&rsquo;re very touched David has chosen to support Bowel Cancer UK
+                through this compassionate book. Every effort to share personal
+                experiences and raise awareness makes a real difference to people
+                affected by bowel cancer. The money raised from this special book
+                will help us to continue funding our vital services and lifesaving
+                research.
+              </blockquote>
+              <footer className="mt-auto pt-4 border-t border-white/10">
+                <p className="font-semibold text-white mt-3">Luke Squires</p>
+                <p className="text-sm text-neutral-300">
+                  Director of Fundraising, Bowel Cancer UK
+                </p>
+              </footer>
+            </article>
+          </div>
+
+          {/* JustGiving CTA */}
+          <div className="mt-10 flex justify-center">
+            <a
+              href={JUSTGIVING_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-xl bg-amber-400 px-5 py-2.5 text-sm font-semibold text-[#0e2a2f] shadow-sm
+                         hover:bg-amber-300 transition-colors
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
+            >
+              Donate via JustGiving
+            </a>
+          </div>
         </div>
       </section>
 
