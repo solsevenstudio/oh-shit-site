@@ -41,7 +41,7 @@ function LivedExperienceDropdown() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={open}
-        className="flex items-center gap-1 hover:text-amber-400 focus:outline-none"
+        className="flex items-center gap-1 hover:text-amber-400 focus:outline-none whitespace-nowrap"
       >
         My Lived Experience <FaChevronDown className={`text-xs transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
@@ -149,7 +149,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
-          <NavLink to="/about" className={link}>About the Author</NavLink>
+          <NavLink to="/about" className={link}>The Author</NavLink>
           <NavLink to="/press" className={link}>Press</NavLink>
           <NavLink to="/bowel-cancer-uk" className={link}>Bowel Cancer UK</NavLink>
           <LivedExperienceDropdown />
@@ -203,7 +203,7 @@ export default function Header() {
       {isOpen && (
         <div className="md:hidden bg-[#0e2a2f] border-t border-white/10 px-4 py-4 flex flex-col gap-4">
           <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
-          <NavLink to="/about" onClick={() => setIsOpen(false)}>About the Author</NavLink>
+          <NavLink to="/about" onClick={() => setIsOpen(false)}>The Author</NavLink>
           <NavLink to="/press" onClick={() => setIsOpen(false)}>Press</NavLink>
           <NavLink to="/bowel-cancer-uk" onClick={() => setIsOpen(false)}>Bowel Cancer UK</NavLink>
           <div className="border-t border-white/10 pt-3">
