@@ -59,7 +59,15 @@ export default function About() {
             Media / speaking enquiries
           </a>
           <p className="text-neutral-400 text-sm mt-3">
-            Prefer Twitter/LinkedIn? Add links here later.
+            Or connect on{" "}
+            <a
+              href="https://www.linkedin.com/in/davidbarrowsolsevenstudio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-300 hover:text-amber-200 underline"
+            >
+              LinkedIn
+            </a>.
           </p>
         </div>
       </article>
