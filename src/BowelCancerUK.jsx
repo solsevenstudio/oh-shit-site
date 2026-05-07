@@ -39,7 +39,7 @@ export default function BowelCancerUK() {
     <main className="bg-[#0e2a2f] text-white">
       <PageMeta
         title="Supporting Bowel Cancer UK | OH SH!T, I've Got Bowel Cancer"
-        description="A percentage of every copy of OH SH!T, I've Got Bowel Cancer goes to Bowel Cancer UK. Plus the Isle of Wight 70-mile run that has raised over £3,500 for the charity."
+        description="A percentage of every copy of OH SH!T, I've Got Bowel Cancer goes to Bowel Cancer UK. Plus the Isle of Wight 107km run that has raised over £3,500 for the charity."
       />
 
       {/* Page tabs (jump links) — at the very top so visible immediately */}
@@ -64,8 +64,8 @@ export default function BowelCancerUK() {
       {/* Hero */}
       <section className="px-6 py-14 sm:py-20 bg-gradient-to-b from-[#0a2228] to-[#0e2a2f]">
         <div className="max-w-5xl mx-auto text-center">
-          <p className="inline-block text-xs font-semibold tracking-widest uppercase text-amber-300 bg-amber-300/10 border border-amber-300/30 rounded-full px-3 py-1 mb-6">
-            Charity Partnership
+          <p className="inline-block text-xs font-semibold tracking-wider uppercase text-amber-300 bg-amber-300/10 border border-amber-300/30 rounded-full px-3 py-1 mb-6">
+            Supporting Bowel Cancer UK
           </p>
           <h1 className="font-serif text-3xl sm:text-5xl mb-5 leading-tight">
             <span className="text-white">OH SH!T </span>
@@ -158,10 +158,10 @@ export default function BowelCancerUK() {
                 Done · Dusted · Done it
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl mb-3 text-white">
-                Isle of Wight &mdash; 70 miles, on foot, for Bowel Cancer UK
+                Isle of Wight &mdash; 107 km, on foot, for Bowel Cancer UK
               </h2>
               <p className="text-neutral-200 max-w-2xl mx-auto leading-relaxed">
-                Six months before diagnosis, I ran 32 miles through the Sussex
+                Six months before diagnosis, I ran 50 km through the Sussex
                 hills, carrying a tumour I didn&rsquo;t know was there. After
                 surgery, after chemotherapy, after the fog finally lifted &mdash; I
                 came back to give something back.

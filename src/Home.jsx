@@ -56,7 +56,7 @@ const EXTRACTS = [
     part: "two",
     title: "Running the Isle of Wight",
     quote:
-      "Six months before diagnosis, I ran 32 miles through the Sussex hills, carrying a tumour I didn’t know was there. When this SH!T is over, I’m coming back — this time to give something back.",
+      "Six months before diagnosis, I ran 50 km through the Sussex hills, carrying a tumour I didn’t know was there. When this SH!T is over, I’m coming back — this time to give something back.",
     href: BUY_LINK_PART2,
   },
 
@@ -763,13 +763,13 @@ export default function Home() {
             </article>
           </div>
 
-          {/* Read more link to dedicated partnership page */}
+          {/* Read more link to the dedicated Supporting Bowel Cancer UK page */}
           <div className="mt-10 text-center">
             <Link
               to="/bowel-cancer-uk"
               className="inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 transition-colors font-medium"
             >
-              Read more about our partnership and the £3,500+ raised
+              Read more about supporting Bowel Cancer UK and the £3,500+ raised
               <span aria-hidden>→</span>
             </Link>
           </div>
