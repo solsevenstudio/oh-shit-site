@@ -58,54 +58,6 @@ export default function BowelCancerUK() {
         </div>
       </section>
 
-      {/* Isle of Wight — completed */}
-      <section className="px-6 py-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl border border-amber-400/40 bg-gradient-to-br from-amber-400/10 to-amber-500/5 p-8 sm:p-12">
-            <div className="text-center mb-6">
-              <p className="inline-block text-xs font-semibold tracking-widest uppercase text-amber-300 bg-amber-400/15 border border-amber-300/40 rounded-full px-3 py-1 mb-4">
-                Done · Dusted · Done it
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl mb-3 text-white">
-                Isle of Wight &mdash; 70 miles, on foot, for Bowel Cancer UK
-              </h2>
-              <p className="text-neutral-200 max-w-2xl mx-auto leading-relaxed">
-                Six months before diagnosis, I ran 32 miles through the Sussex
-                hills, carrying a tumour I didn&rsquo;t know was there. After
-                surgery, after chemotherapy, after the fog finally lifted &mdash; I
-                came back to give something back.
-              </p>
-            </div>
-
-            {/* Big stat */}
-            <div className="my-10 text-center">
-              <div className="text-xs uppercase tracking-widest text-amber-300 mb-2 font-semibold">
-                Raised so far for Bowel Cancer UK
-              </div>
-              <div className="font-serif text-6xl sm:text-7xl font-bold text-amber-400 leading-none">
-                £3,500
-                <span className="text-3xl sm:text-4xl text-amber-300/80">+</span>
-              </div>
-              <div className="text-neutral-300 mt-3">
-                and the JustGiving page is still open &mdash; every pound counts.
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-wrap gap-3 justify-center">
-              <a
-                href={JUSTGIVING_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-xl bg-amber-400 px-6 py-3 text-sm font-semibold text-[#0e2a2f] shadow-sm hover:bg-amber-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
-              >
-                Donate via JustGiving
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Bowel Cancer UK + Luke Squires quote */}
       <section className="px-6 py-12 bg-[#12343b]">
         <div className="max-w-5xl mx-auto">
@@ -159,6 +111,54 @@ export default function BowelCancerUK() {
                 </p>
               </footer>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Isle of Wight — completed */}
+      <section className="px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl border border-amber-400/40 bg-gradient-to-br from-amber-400/10 to-amber-500/5 p-8 sm:p-12">
+            <div className="text-center mb-6">
+              <p className="inline-block text-xs font-semibold tracking-widest uppercase text-amber-300 bg-amber-400/15 border border-amber-300/40 rounded-full px-3 py-1 mb-4">
+                Done · Dusted · Done it
+              </p>
+              <h2 className="font-serif text-3xl sm:text-4xl mb-3 text-white">
+                Isle of Wight &mdash; 70 miles, on foot, for Bowel Cancer UK
+              </h2>
+              <p className="text-neutral-200 max-w-2xl mx-auto leading-relaxed">
+                Six months before diagnosis, I ran 32 miles through the Sussex
+                hills, carrying a tumour I didn&rsquo;t know was there. After
+                surgery, after chemotherapy, after the fog finally lifted &mdash; I
+                came back to give something back.
+              </p>
+            </div>
+
+            {/* Big stat */}
+            <div className="my-10 text-center">
+              <div className="text-xs uppercase tracking-widest text-amber-300 mb-2 font-semibold">
+                Raised so far for Bowel Cancer UK
+              </div>
+              <div className="font-serif text-6xl sm:text-7xl font-bold text-amber-400 leading-none">
+                £3,500
+                <span className="text-3xl sm:text-4xl text-amber-300/80">+</span>
+              </div>
+              <div className="text-neutral-300 mt-3">
+                and the JustGiving page is still open &mdash; every pound counts.
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href={JUSTGIVING_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-xl bg-amber-400 px-6 py-3 text-sm font-semibold text-[#0e2a2f] shadow-sm hover:bg-amber-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
+              >
+                Donate via JustGiving
+              </a>
+            </div>
           </div>
         </div>
       </section>
