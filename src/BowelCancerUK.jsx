@@ -19,6 +19,21 @@ const BOWEL_CANCER_UK_LINK = "https://www.bowelcanceruk.org.uk/";
 const SCREENING_LINK =
   "https://www.bowelcanceruk.org.uk/about-bowel-cancer/screening/";
 
+/** Smooth scroll helper for in-page anchors */
+const scrollTo = (id) => (e) => {
+  e.preventDefault();
+  document
+    .querySelector(id)
+    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
+const TABS = [
+  { href: "#about", label: "About" },
+  { href: "#fundraiser", label: "The Run" },
+  { href: "#books", label: "The Books" },
+  { href: "#awareness", label: "Awareness" },
+];
+
 export default function BowelCancerUK() {
   return (
     <main className="bg-[#0e2a2f] text-white">
@@ -26,6 +41,25 @@ export default function BowelCancerUK() {
         title="Supporting Bowel Cancer UK | OH SH!T, I've Got Bowel Cancer"
         description="A percentage of every copy of OH SH!T, I've Got Bowel Cancer goes to Bowel Cancer UK. Plus the Isle of Wight 70-mile run that has raised over £3,500 for the charity."
       />
+
+      {/* Page tabs (jump links) — at the very top so visible immediately */}
+      <nav
+        aria-label="Sections on this page"
+        className="px-6 py-4 border-b border-white/10 bg-[#0a2228]"
+      >
+        <div className="max-w-5xl mx-auto flex flex-wrap gap-2 justify-center">
+          {TABS.map((tab) => (
+            <a
+              key={tab.href}
+              href={tab.href}
+              onClick={scrollTo(tab.href)}
+              className="px-4 py-2 rounded-full text-sm font-semibold bg-white/5 text-white border border-white/15 hover:bg-amber-400 hover:text-[#0e2a2f] hover:border-amber-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+            >
+              {tab.label}
+            </a>
+          ))}
+        </div>
+      </nav>
 
       {/* Hero */}
       <section className="px-6 py-14 sm:py-20 bg-gradient-to-b from-[#0a2228] to-[#0e2a2f]">
@@ -59,7 +93,7 @@ export default function BowelCancerUK() {
       </section>
 
       {/* About Bowel Cancer UK + Luke Squires quote */}
-      <section className="px-6 py-12 bg-[#12343b]">
+      <section id="about" className="px-6 py-12 bg-[#12343b] scroll-mt-24">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-serif text-2xl sm:text-3xl mb-10 text-center">
             About Bowel Cancer UK
@@ -116,7 +150,7 @@ export default function BowelCancerUK() {
       </section>
 
       {/* Isle of Wight — completed */}
-      <section className="px-6 py-16">
+      <section id="fundraiser" className="px-6 py-16 scroll-mt-24">
         <div className="max-w-5xl mx-auto">
           <div className="rounded-2xl border border-amber-400/40 bg-gradient-to-br from-amber-400/10 to-amber-500/5 p-8 sm:p-12">
             <div className="text-center mb-6">
@@ -164,7 +198,7 @@ export default function BowelCancerUK() {
       </section>
 
       {/* The books */}
-      <section className="px-6 py-16">
+      <section id="books" className="px-6 py-16 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-2xl sm:text-3xl mb-3 text-center">
             A percentage of every copy goes to Bowel Cancer UK
@@ -244,7 +278,7 @@ export default function BowelCancerUK() {
       </section>
 
       {/* 1 in 17 / advocacy */}
-      <section className="px-6 py-16 bg-[#0a2228]">
+      <section id="awareness" className="px-6 py-16 bg-[#0a2228] scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 sm:p-12">
             <div className="text-center">
