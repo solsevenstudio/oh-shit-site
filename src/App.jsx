@@ -10,6 +10,7 @@ import Symptoms from "./Symptoms.jsx";
 import Diagnosis from "./Diagnosis.jsx";
 import WhatTheyDontTellYou from "./WhatTheyDontTellYou.jsx";
 import Worried from "./Worried.jsx";
+import BowelCancerUK from "./BowelCancerUK.jsx";
 
 function AnnouncementBanner() {
   const [dismissed, setDismissed] = useState(false);
@@ -121,6 +122,7 @@ export default function App() {
           <Route path="/diagnosis" element={<Diagnosis />} />
           <Route path="/what-they-dont-tell-you" element={<WhatTheyDontTellYou />} />
           <Route path="/worried" element={<Worried />} />
+          <Route path="/bowel-cancer-uk" element={<BowelCancerUK />} />
           {/* Fallback */}
           <Route path="*" element={<Home />} />
         </Routes>

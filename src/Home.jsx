@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import PageMeta from "./PageMeta.jsx";
 
 /** Public assets (in /public/assets) — keep these filenames */
@@ -762,18 +763,15 @@ export default function Home() {
             </article>
           </div>
 
-          {/* JustGiving CTA */}
-          <div className="mt-10 flex justify-center">
-            <a
-              href={JUSTGIVING_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-amber-400 px-5 py-2.5 text-sm font-semibold text-[#0e2a2f] shadow-sm
-                         hover:bg-amber-300 transition-colors
-                         focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e2a2f]"
+          {/* Read more link to dedicated partnership page */}
+          <div className="mt-10 text-center">
+            <Link
+              to="/bowel-cancer-uk"
+              className="inline-flex items-center gap-2 text-amber-300 hover:text-amber-200 transition-colors font-medium"
             >
-              Donate via JustGiving
-            </a>
+              Read more about our partnership and the £3,500+ raised
+              <span aria-hidden>→</span>
+            </Link>
           </div>
         </div>
       </section>
