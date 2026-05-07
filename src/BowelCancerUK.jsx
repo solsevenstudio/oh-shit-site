@@ -29,7 +29,7 @@ const scrollTo = (id) => (e) => {
 
 const TABS = [
   { href: "#about", label: "About" },
-  { href: "#fundraiser", label: "The Run" },
+  { href: "#fundraiser", label: "107KM Fundraiser" },
   { href: "#books", label: "The Books" },
   { href: "#awareness", label: "Awareness" },
 ];

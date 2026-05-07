@@ -43,7 +43,7 @@ function LivedExperienceDropdown() {
         aria-expanded={open}
         className="flex items-center gap-1 hover:text-amber-400 focus:outline-none whitespace-nowrap"
       >
-        My Lived Experience <FaChevronDown className={`text-xs transition-transform ${open ? "rotate-180" : ""}`} />
+        My Story <FaChevronDown className={`text-xs transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <div
@@ -212,7 +212,7 @@ export default function Header() {
           <NavLink to="/press" onClick={() => setIsOpen(false)}>Press</NavLink>
           <NavLink to="/bowel-cancer-uk" onClick={() => setIsOpen(false)}>Bowel Cancer UK</NavLink>
           <div className="border-t border-white/10 pt-3">
-            <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">My Lived Experience</p>
+            <p className="text-xs text-neutral-400 uppercase tracking-wide mb-2">My Story</p>
             {JOURNEY_LINKS.map((item) => (
               <NavLink
                 key={item.to}
