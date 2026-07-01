@@ -170,10 +170,10 @@ export default function Press() {
               </div>
             </div>
 
-            {/* Two short clips */}
-            <div className="grid gap-6 sm:grid-cols-2">
-              <article className="bg-white/5 rounded-xl border border-white/10 p-4">
-                <h3 className="font-semibold mb-3">
+            {/* Short clips — smaller, 2-up on mobile, 3-up on desktop */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <article className="bg-white/5 rounded-xl border border-white/10 p-3">
+                <h3 className="font-semibold text-sm mb-2 leading-snug">
                   He couldn’t leave the hospital until he’d done this
                 </h3>
                 <video
@@ -183,13 +183,13 @@ export default function Press() {
                   poster="/assets/clips/farts.jpg"
                   className="w-full rounded-lg"
                 >
-                  <source src="/assets/clips/farts.m4v" type="video/mp4" />
+                  <source src="/assets/clips/farts.mp4" type="video/mp4" />
                   Sorry, your browser doesn’t support embedded video.
                 </video>
               </article>
 
-              <article className="bg-white/5 rounded-xl border border-white/10 p-4">
-                <h3 className="font-semibold mb-3">
+              <article className="bg-white/5 rounded-xl border border-white/10 p-3">
+                <h3 className="font-semibold text-sm mb-2 leading-snug">
                   1 in 17 men will be diagnosed with this
                 </h3>
                 <video
@@ -199,7 +199,23 @@ export default function Press() {
                   poster="/assets/clips/1in17.jpg"
                   className="w-full rounded-lg"
                 >
-                  <source src="/assets/clips/1in17.m4v" type="video/mp4" />
+                  <source src="/assets/clips/1in17.mp4" type="video/mp4" />
+                  Sorry, your browser doesn’t support embedded video.
+                </video>
+              </article>
+
+              <article className="bg-white/5 rounded-xl border border-white/10 p-3">
+                <h3 className="font-semibold text-sm mb-2 leading-snug">
+                  “I can’t do this anymore” — the front door breakdown
+                </h3>
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/assets/clips/clip3.jpg"
+                  className="w-full rounded-lg"
+                >
+                  <source src="/assets/clips/clip3.mp4" type="video/mp4" />
                   Sorry, your browser doesn’t support embedded video.
                 </video>
               </article>
