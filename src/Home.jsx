@@ -410,50 +410,53 @@ export default function Home() {
       {/* Podcast feature */}
       <section className="px-6 py-10 bg-[#0a2228]">
         <div className="max-w-4xl mx-auto">
+          {/* Latest episode — chapter two: chemotherapy */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
             <div className="flex-shrink-0 text-5xl">🎙</div>
             <div className="flex-1">
-              <div className="text-xs uppercase tracking-wider text-amber-400 font-semibold mb-1">As heard on The Graft Podcast</div>
+              <div className="text-xs uppercase tracking-wider text-amber-400 font-semibold mb-1">Latest on The Graft Podcast</div>
               <h2 className="font-serif text-xl sm:text-2xl text-white mb-2">
-                "The Fittest I'd Ever Been — Then I Got Bowel Cancer | GRAFT According to Dar Barrow"
+                "What Nobody Tells You About Life After Cancer Surgery"
               </h2>
               <p className="text-neutral-300 text-sm leading-relaxed mb-4">
-                Dar was training for ultramarathons when he was diagnosed with stage 3B bowel cancer.
-                Host Ben Glimmerveen talks to him about diagnosis, surgery, chemotherapy — and why
-                fitness is no substitute for listening to your body.
+                Dar is back on Graft for chapter two: chemotherapy. The surgery was hard. What came
+                after was something else entirely. This one covers the side effects nobody warns you
+                about, from frozen eyes and fizzy hands to taste falling off a cliff, the worst mental
+                health day of his life arriving on an ordinary dog walk, the NHS helpline he ignored
+                until he needed it, and what recovery actually feels like at 80% physically and 60%
+                mentally. He's also running 107km around the Isle of Wight for Bowel Cancer UK, and
+                book two is out now.
               </p>
               <blockquote className="border-l-4 border-amber-400 pl-4 mb-6">
                 <p className="text-neutral-200 italic leading-relaxed">
-                  "When public speaker Dar Barrow went on holiday to Menorca, the last thing he expected
-                  was to come home with bowel cancer. Fit, healthy, having just run an ultra marathon —
-                  he had no symptoms, no warning signs."
+                  "80% of the physical version, 60% of the mental version of who you were before."
                 </p>
                 <footer className="text-amber-400 text-sm font-semibold mt-2">— The Graft Podcast</footer>
               </blockquote>
 
               <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
                 <iframe
-                  src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
+                  src="https://open.spotify.com/embed/episode/39mCD1Kz3u1fkTFNenfIDB?utm_source=generator"
                   width="100%"
                   height="352"
                   frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="The Graft Podcast: The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+                  title="The Graft Podcast: What Nobody Tells You About Life After Cancer Surgery"
                 />
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
+                  href="https://open.spotify.com/episode/39mCD1Kz3u1fkTFNenfIDB"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#1DB954] text-white text-sm font-semibold hover:opacity-90"
                 >
-                  🎵 Watch on Spotify
+                  🎵 Listen on Spotify
                 </a>
                 <a
-                  href="https://podcasts.apple.com/ie/podcast/the-fittest-id-ever-been-then-i-got-bowel-cancer/id1811506979?i=1000732918438"
+                  href="https://podcasts.apple.com/gb/podcast/the-graft-podcast/id1811506979"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#9333EA] text-white text-sm font-semibold hover:opacity-90"
@@ -461,6 +464,49 @@ export default function Home() {
                   🎙 Apple Podcasts
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Earlier episode — the original diagnosis conversation */}
+          <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+            <div className="text-xs uppercase tracking-wider text-neutral-400 font-semibold mb-1">Earlier on The Graft Podcast</div>
+            <h3 className="font-serif text-lg sm:text-xl text-white mb-2">
+              "The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+            </h3>
+            <p className="text-neutral-300 text-sm leading-relaxed mb-4">
+              Where it started. Dar was training for ultramarathons when he was diagnosed with stage 3B
+              bowel cancer. Host Ben Glimmerveen talks to him about diagnosis, surgery and why fitness
+              is no substitute for listening to your body.
+            </p>
+            <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
+              <iframe
+                src="https://open.spotify.com/embed/episode/41TVhA2SSDgeCwCLGiJwfE?utm_source=generator"
+                width="100%"
+                height="232"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="The Graft Podcast: The Fittest I'd Ever Been — Then I Got Bowel Cancer"
+              />
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://open.spotify.com/episode/41TVhA2SSDgeCwCLGiJwfE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#1DB954] text-white text-sm font-semibold hover:opacity-90"
+              >
+                🎵 Listen on Spotify
+              </a>
+              <a
+                href="https://podcasts.apple.com/ie/podcast/the-fittest-id-ever-been-then-i-got-bowel-cancer/id1811506979?i=1000732918438"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#9333EA] text-white text-sm font-semibold hover:opacity-90"
+              >
+                🎙 Apple Podcasts
+              </a>
             </div>
           </div>
         </div>

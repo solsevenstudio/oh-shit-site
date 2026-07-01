@@ -80,9 +80,55 @@ export default function Press() {
           <div className="mt-12">
             <h2 className="font-serif text-2xl sm:text-3xl mb-6">Podcasts &amp; Clips</h2>
 
-            {/* Graft Podcast episode */}
+            {/* Graft Podcast — latest episode (chapter two: chemotherapy) */}
             <div className="mb-10 bg-white/5 rounded-2xl border border-white/10 p-6">
-              <div className="mb-1 text-xs uppercase tracking-wider text-amber-400 font-semibold">The Graft Podcast</div>
+              <div className="mb-1 text-xs uppercase tracking-wider text-amber-400 font-semibold">The Graft Podcast — Latest</div>
+              <h3 className="font-serif text-xl sm:text-2xl text-white mb-3">
+                "What Nobody Tells You About Life After Cancer Surgery"
+              </h3>
+              <p className="text-neutral-300 leading-relaxed mb-5">
+                Dar returns to Graft for chapter two: chemotherapy. The conversation covers the side
+                effects nobody warns you about, from frozen eyes and fizzy hands to the complete collapse
+                of taste, the worst mental health day of his life arriving on an ordinary dog walk, the
+                NHS helpline he ignored until he needed it, and what recovery actually feels like at 80%
+                physically and 60% mentally. Plus the 107km Isle of Wight challenge for Bowel Cancer UK,
+                and book two out now.
+              </p>
+              <div className="rounded-xl overflow-hidden border border-white/10 mb-4">
+                <iframe
+                  src="https://open.spotify.com/embed/episode/39mCD1Kz3u1fkTFNenfIDB?utm_source=generator"
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="The Graft Podcast: What Nobody Tells You About Life After Cancer Surgery"
+                />
+              </div>
+              <div className="flex flex-wrap gap-4 text-sm">
+                <a
+                  href="https://open.spotify.com/episode/39mCD1Kz3u1fkTFNenfIDB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#1DB954] text-white font-semibold hover:opacity-90"
+                >
+                  🎵 Listen on Spotify
+                </a>
+                <a
+                  href="https://podcasts.apple.com/gb/podcast/the-graft-podcast/id1811506979"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-[#9333EA] text-white font-semibold hover:opacity-90"
+                >
+                  🎙 Listen on Apple Podcasts
+                </a>
+              </div>
+            </div>
+
+            {/* Graft Podcast — earlier episode (diagnosis) */}
+            <div className="mb-10 bg-white/5 rounded-2xl border border-white/10 p-6">
+              <div className="mb-1 text-xs uppercase tracking-wider text-neutral-400 font-semibold">The Graft Podcast — Earlier</div>
               <h3 className="font-serif text-xl sm:text-2xl text-white mb-3">
                 "The Fittest I'd Ever Been — Then I Got Bowel Cancer | GRAFT According to Dar Barrow"
               </h3>
